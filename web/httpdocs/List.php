@@ -39,9 +39,9 @@
                 
             <tr>
                 
-                <td><?php echo ($row['model']) ;?></td>
+                <td><?php echo ($row['item_model']) ;?></td>
                 <td><?php echo $row['item_name'] ;?></td>
-                <td style="width: 300px"> <?php echo nl2br($row['description']) ;?></td>
+                <td style="width: 300px"> <?php echo nl2br($row['item_description']) ;?></td>
                 <td><?php echo $row['option_id'] ;?></td>
                 <td><?php echo $row['price'] ;?></td>
                 <td><?php echo $row['priceperday'] ;?></td>
