@@ -12,6 +12,10 @@
     $brand_id = $_POST['brand_id'];
     $status_id =$_POST['status_id'];
     
+    
+   //upload image
+    
+    
    $q = "INSERT INTO items(item_id,item_model,item_name,item_description,option_id,item_price,item_priceperday,deposit_1,deposit_2,type_id,brand_id,status_id) VALUES ('','$item_model','$item_name','$item_description','$option_id','$item_price','$item_priceperday','$deposit_1','$deposit_2','$type_id','$brand_id','$status_id')";
    $result = mysqli_query($con, $q);
    if($result){
