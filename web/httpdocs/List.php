@@ -33,6 +33,7 @@
                 <th style="width: 90px">ยี่ห้อ</th>
                 <th style="width: 90px">สถานะ</th>
                 <th style="width: 90px">แก้ไข</th>  
+                <th style="width: 90px">ลบ</th>
             </tr>
             <?php 
                 while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
@@ -44,14 +45,15 @@
                 <td><?php echo $row['item_name'] ;?></td>
                 <td style="width: 300px"> <?php echo nl2br($row['item_description']) ;?></td>
                 <td><?php echo $row['name'] ;?></td>
-                <td><?php echo number_format($row['price']) ;?></td>
-                <td><?php echo number_format($row['priceperday']) ;?></td>
+                <td><?php echo number_format($row['item_price']) ;?></td>
+                <td><?php echo number_format($row['item_priceperday']) ;?></td>
                 <td><?php echo number_format($row['deposit_1']) ;?></td>
                 <td><?php echo number_format($row['deposit_2']) ;?></td>
                 <td><?php echo $row['type_name'] ;?></td>
                 <td><?php echo $row['brand_name'] ;?></td>
                 <td><?php echo $row['status_name'] ;?></td>
-                <td><a href="update.php?pro_id=<?php echo ($row['item_model']) ;?>">แก้ไข</td>
+                <td><a href="update.php?item_id=<?php echo ($row['item_id']) ;?>">แก้ไข</td>
+                <td><a href="delete.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>
             </tr>
             <?php
                 }
