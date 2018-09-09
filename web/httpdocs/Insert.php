@@ -86,9 +86,7 @@ require 'index.php';
                         <td><input name="deposit_2" type="text" id="deposit_2" size="20" > บาท</td>
                     </tr>
                 </table>
-                <label><b>รูปสินค้า</b></label>
-                <input type="file" name='item_image'>
-                <br><br>
+                
                 
                 <input type="hidden" name="item_id" value="<?php echo $rowitem['item_id']; ?>">
                 <input name="submit" type="submit" value="ยืนยัน">
