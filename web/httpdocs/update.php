@@ -61,7 +61,7 @@
                         ชำรุด
                 <input type="radio" name="status_id" value="3" id="status_id" <?php if ($rowitem['status_id']=='3') echo 'checked';  ?> >
                         กำลังซ่อมแซม
-                <input type="radio" name="status_id" value="4" id="status_id" <?php if ($row['status_id']=='4') echo 'checked';  ?> >
+                <input type="radio" name="status_id" value="4" id="status_id" <?php if ($rowitem['status_id']=='4') echo 'checked';  ?> >
                         หาย
                  
                 <label>Model:</label><input name="item_model" type="text" id="item_model" size="20" value="<?php echo $rowitem['item_model']; ?>">

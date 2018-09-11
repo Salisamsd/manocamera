@@ -38,7 +38,7 @@
                 <td style="width: 300px"> <?php echo nl2br($row['ft_name']) ;?></td>
                 <td><?php echo $row['item_model'] ;?></td>
                 <td><?php echo $row['status_name'] ;?></td>
-                <td><a href="update.php?item_id=<?php echo ($row['item_id']) ;?>">แก้ไข</td>
+                <td><a href="freeitemupdate.php?ft_id=<?php echo ($row['ft_id']) ;?>">แก้ไข</td>
                 <td><a href="delete.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>
             </tr>
             <?php
