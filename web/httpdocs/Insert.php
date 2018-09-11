@@ -87,7 +87,8 @@ require 'index.php';
                     </tr>
                 </table>
                 
-                
+                <label>รูปภาพ</label>
+                <input type="file" name="item_image"/> <br>
                 <input type="hidden" name="item_id" value="<?php echo $rowitem['item_id']; ?>">
                 <input name="submit" type="submit" value="ยืนยัน">
                
