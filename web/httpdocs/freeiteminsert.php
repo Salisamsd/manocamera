@@ -38,7 +38,7 @@ require 'index.php';
                         กำลังซ่อมแซม
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="status_id" value="4" id="status_id"  >
                         หาย
-                        
+                        <br>
                        <input name="submit" type="submit" value="ยืนยัน">
             </fieldset>
         </form>
