@@ -5,12 +5,12 @@ $con = mysqli_connect('localhost', 'manocame', 'Pern1234') or die('nooo'. mysqli
 //echo 'ติดต่อฐานช้อมูลได้';
 mysqli_select_db($con,'main');
 
-$sql = "select * from items ";
-$query= mysqli_query($con, $sql);
+//$sql = "select * from items ";
+//$query= mysqli_query($con, $sql);
 
 //$data = [];
 //$row = mysqli_fetch_assoc($res)){
-    array_push($data, $row);
+   // array_push($data, $row);
 
 
 print_r($data); 

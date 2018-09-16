@@ -11,7 +11,7 @@
        // echo 'ลบแล้ว' ;
         //echo "<hr>";
    //echo "<a href='List.php'>แสดงข้อมูล</a>";
-    header("Location: List.php");
+    header("Location:listMirrorless.php");
     } else {
         
         echo 'ผิดพลาด' . mysqli_error($con);

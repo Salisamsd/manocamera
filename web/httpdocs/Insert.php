@@ -1,5 +1,4 @@
 <?php
-require 'index.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -88,8 +87,8 @@ require 'index.php';
                 </table>
                 
                 <label>รูปภาพ</label>
-                <input type="file" name="item_image" > <br>
-                <input type="hidden" name="item_id" value="<?php echo $rowitem['item_id']; ?>">
+                <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
+                <input name="file1" type="file" />
                 <input name="submit" type="submit" value="ยืนยัน">
                
             </fieldset>

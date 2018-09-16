@@ -1,89 +1,57 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr" class="sid-plesk">
-<head>
-    <title>Domain Default page</title>
-    <meta name="copyright" content="Copyright 1999-2017. Parallels IP Holdings GmbH. All Rights Reserved.">
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta http-equiv="Cache-Control" content="no-cache">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<div class="page-container">
-    <!-- start: PAGE HEADER-->
-    <div class="page-header-wrapper">
-        <div class="page-header">
-            <a class="product-logo" href="https://www.plesk.com/" target="_blank"><img src="img/logo.png" alt="Plesk"></a>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>MANOCAMERA</title>
+  </head>
+  
+  <body>
+    
+    <!--content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 col-xs-12">
+          
         </div>
-    </div>
-    <!-- end: PAGE HEADER-->
-
-    <!-- start: PAGE CONTENT-->
-    <div class="page-content-wrapper">
-        <div class="page-content">
-
-            <div class="page-info-wrapper">
-                <div class="page-info">
-                    <div class="page-info-heading">If you are seeing this message, the website for <script>document.write('\x3Ca href="http://' + (location.hostname.indexOf(':')>=0?'['+location.hostname+']':location.hostname) + '"\x3E' + location.hostname + '\x3C/a\x3E');</script> is not available at this time.</div>
-                    <p>If you are the owner of this website, one of the following things may be occurring:</p>
-                    <ul>
-                        <li>You have not put any content on your website.</li>
-                        <li>Your provider has suspended this page.</li>
-                    </ul>
-                    <p><b>Please login to <script>document.write('\x3Ca href="https://' + (location.hostname.indexOf(':')>=0?'['+location.hostname+']':location.hostname) + ':8443"\x3Ehttps://' + (location.hostname.indexOf(':')>=0?'['+location.hostname+']':location.hostname) +':8443\x3C/a\x3E');</script> to receive instructions on setting  up your website.</b></p>
-                </div>
+          
+        <div class="col-md-2"></div>
+        <div class="col-md-4 col-xs-12" >
+            <center><img src="image/icmain.png" alt="Mano Camera" width="380" height="180"></center>
+            
+          <form   name="form1" method="post" action="check_login.php"   >
+              <h3 style="margin-top: 20px">Admin Login </h3>
+            <div class="form-group">
+                <label >Username</label>
+              <input  class="form-control" name="txtUsername" type="text" id="txtUsername" placeholder="Username">
             </div>
-
-            <div class="product-info-wrapper">
-                <div class="col">
-                    <div class="product-info">
-                        <div class="product-info-heading">What is Plesk</div>
-                        <div class="product-info-content">
-                            <p><strong><a href="https://www.plesk.com" target="_blank">Plesk</a></strong> is a hosting control panel with simple and secure web server and website management tools. It was specially designed to help IT specialists manage web, DNS, mail and other services through a comprehensive and user-friendly GUI. <a class="more" href="https://www.plesk.com" target="_blank">Learn more about Plesk</a>.</p>
-                            <ul class="links">
-                                <li><a class="blog" href="https://www.plesk.com/blog/" target="_blank"><span>Developer Blog</span></a></li>
-                                <li><a class="forum" href="https://talk.plesk.com/" target="_blank"><span>Forum</span></a></li>
-                                <li><a class="knowledge-base" href="https://support.plesk.com/" target="_blank"><span>Knowledge Base</span></a></li>
-                                <li><a class="facebook" href="https://www.facebook.com/Plesk" target="_blank"><span>Facebook</span></a></li>
-                                <li><a class="twitter" href="https://twitter.com/Plesk" target="_blank"><span>Twitter</span></a></li>
-                                <li><a class="google-plus" href="https://plus.google.com/communities/109881979300958500728" target="_blank"><span>Google+</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="product-info">
-                        <div class="product-info-heading">Test pages</div>
-                        <div class="product-info-content">
-                            <p>Plesk provides several test pages that you can use for checking the scripting features, testing database connections and mail sending.</p>
-                            <p>Click an icon to see test pages for different scripts:</p>
-                            <ul class="links">
-                                <li><a class="fastcgi" href="test/fcgi/test.html"><span>FastCGI</span></a></li>
-                                <li><a class="python" href="test/python/test.html"><span>Python</span></a></li>
-                                <li><a class="php" href="test/php/test.html"><span>PHP</span></a></li>
-                                <li><a class="perl" href="test/perl/test.html"><span>Perl</span></a></li>
-                                <li><a class="ssi" href="test/ssi/test.html"><span>SSI</span></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- /.product-info-wrapper -->
-
-        </div>
+            <div class="form-group">
+              <label >Password</label>
+              <input class="form-control" name="txtPassword" type="password" id="txtPassword" placeholder="Password" >
+            </div>
+              
+              <button type="submit" class="btn btn-warning" name="Submit"  >Login</button>
+            
+      </div>
     </div>
-    <!-- end: PAGE CONTENT-->
-
-    <!-- start: PAGE FOOTER-->
-    <div class="page-footer-wrapper">
-        <div class="page-footer">
-            This page was generated by Plesk. Plesk is the leading WebOps platform to run, automate and grow applications, websites and hosting businesses. Learn more at <a href="https://www.plesk.com" target="_blank">plesk.com</a>.
-        </div>
-    </div>
-    <!-- end: PAGE FOOTER-->
-</div>
-
-</body>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+    </body>
+    <center>
+            <footer class="footer" style="margin-top: 50px">
+             <div class="container">
+             <span class="text-muted"> Only staff of MANOCAMERA.com</span>
+            </div>
+            </footer>
+            </center>
 </html>
