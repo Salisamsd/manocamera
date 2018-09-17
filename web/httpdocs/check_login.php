@@ -31,7 +31,7 @@
 			}
 			else
 			{
-				header("location:newEmptyPHPWebPage.php");
+				header("location:index.html");
 			}
 	}
 	mysqli_close($objCon);

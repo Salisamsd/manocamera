@@ -69,7 +69,8 @@ height:20px;
     <?php include('menu.php');?>
     </div>
     <div class="container-fluid">
-        <?php include('admin_page.php');?>
+        
+        <<?php include('admin.php');?>
     </div>
 </body>
 </html>
