@@ -22,7 +22,7 @@
     
 }
 #wrapper{
-    padding:90px 15px;
+    padding:40px 15px;
     
 }
 .navbar-expand-lg .navbar-nav.side-nav{
@@ -70,7 +70,7 @@ height:20px;
     </div>
     <div class="container-fluid">
         
-        <<?php include('admin.php');?>
+        <?php include('admin.php');?>
     </div>
 </body>
 </html>
