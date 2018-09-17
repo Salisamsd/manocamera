@@ -15,11 +15,10 @@
           <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">DSLR</a>
     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-      <a class="dropdown-item" href="/listDSLR.php">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
-      <div class="dropdown-divider"></div>
-      <a class="dropdown-item" href="#">Separated link</a>
+      <a class="dropdown-item" href="/listDSLR.php">Body+Lense</a>
+      <a class="dropdown-item" href="#">Body</a>
+		<a class="dropdown-item" href="#">Lense</a>
+      <a class="dropdown-item" href="#">All Accessory</a>
     </div>
   </li>
           <li class="nav-item">
@@ -29,7 +28,7 @@
             <a class="nav-link" href="/listDSLR.php">Video</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/listDSLR.php">Action</a>
+            <a class="nav-link" href="/listAction.php">Action</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/listDSLR.php">All Accessory</a>
