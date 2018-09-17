@@ -51,7 +51,9 @@
     bottom:0;
     overflow-x:hidden;
     padding-bottom:40px}
+
 }
+
  .icon {
 width:25px;
 height:30px;
