@@ -18,7 +18,7 @@
     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
         <a class="dropdown-item" href="DSLR/listDSLR_Body.php">Body</a>
         <a class="dropdown-item" href="DSLR/listDSLR_BL.php">Body+Lense</a>
-		<a class="dropdown-item" href="#">Lense</a>
+		<a class="dropdown-item" href="DSLR/listDSLR_L.php">Lense</a>
       <a class="dropdown-item" href="#">All Accessory</a>
     </div>
   </li>
