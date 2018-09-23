@@ -1,4 +1,3 @@
-
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -14,7 +13,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
-   label{
+     label{
                 display: block;
             }
             
@@ -64,15 +63,3 @@ height:20px;
  }
 </style>
 </head>
-<body>
-<div id="wrapper">
-    <?php include('menu.php');?>
-    <div class="container-fluid">
-        <h3 align="left"> DSLR  <a class="btn btn-info " href="/insertDSLR.php" role="button"><img  class="icon" src="img/IKONS/PNG/32/pen_1.png"> เพิ่ม </a> </h3>
-    <?php include('test.php');?>
-        
-    </div>
-     
-    </div>
-</body>
-</html>

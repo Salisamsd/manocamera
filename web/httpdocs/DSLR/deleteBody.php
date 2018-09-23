@@ -1,6 +1,6 @@
 <?php
 
-    require 'index.php';
+    require '../index.php';
     
     $item_id = $_GET['item_id'];
     
@@ -11,7 +11,7 @@
        // echo 'ลบแล้ว' ;
         //echo "<hr>";
    //echo "<a href='List.php'>แสดงข้อมูล</a>";
-    header("Location:listMirrorless.php");
+    header("Location:listDSLR_Body.php");
     } else {
         
         echo 'ผิดพลาด' . mysqli_error($con);

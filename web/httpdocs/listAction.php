@@ -67,7 +67,7 @@ height:20px;
 <div id="wrapper">
     <?php include('menu.php');?>
     <div class="container-fluid">
-        <h3 align="left"> ACTION </a> </h3>
+        <h3 align="left"> ACTION  </h3>
     
         
     </div>

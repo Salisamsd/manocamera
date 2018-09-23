@@ -1,25 +1,19 @@
+
+
 <?php
-    require 'index.php';
+    require '../index.php';
     $item_id = $_GET['item_id'];
     $qq ="select * from items where item_id='$item_id'";
     $resitem= mysqli_query($con, $qq);
     $rowitem = mysqli_fetch_array($resitem,MYSQLI_ASSOC);
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>แก้ไขข้อมุล</title>
-        <style>
-            label{
-                display: block;
-            }
-            
-        </style>
-    </head>
-    <body>
+<?php include '../lockpage.php';?>
+<body>
+<div id="wrapper">
+     <?php include('menuDSLR.php');?>
+    <div class="container-fluid">
         <h2>แก้ไขข้อมูล</h2>
-        <form action="updateitem.php" method="post" enctype="mulitpart/form-data" id="form1">
+        <form action="uptoBody.php" method="post" enctype="mulitpart/form-data" id="form1">
             <fieldset>
                 
                 <label><b>ยี่ห้อ</b></label>
@@ -66,7 +60,7 @@
                  
                 <label>Model:</label><input name="item_model" type="text" id="item_model" size="20" value="<?php echo $rowitem['item_model']; ?>">
                 <label>ชื่อรุ่น:</label><input name="item_name" type="text" id="item_name" size="49" value="<?php echo $rowitem['item_name']; ?>" >
-                <label>Spec:</label><textarea  name="item_description"  id="item_description" cols="50" rows="7" wrap="soft"><?php echo $rowitem['item_description']; ?></textarea>
+                <label>Spec:</label><textarea  name="item_description"  id="item_description" cols="80" rows="5" wrap="soft"><?php echo $rowitem['item_description']; ?></textarea>
                 <br>           
                
                 <table>
@@ -95,4 +89,5 @@
                
             </fieldset>
         </form>
-</html>
+</div>
+</div>

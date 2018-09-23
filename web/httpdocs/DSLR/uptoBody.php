@@ -1,5 +1,5 @@
 <?php
-    require 'index.php';
+    require '../index.php';
     $item_id = $_POST['item_id'];
     $item_model = $_POST['item_model'];
     $item_name = $_POST['item_name'];
@@ -16,12 +16,12 @@
    $q = "UPDATE items SET item_model='$item_model',item_name='$item_name',item_description='$item_description',option_id='$option_id',item_price='$item_price',item_priceperday='$item_priceperday',deposit_1='$deposit_1',deposit_2='$deposit_2',type_id='$type_id',brand_id='$brand_id',status_id='$status_id' WHERE item_id=$item_id";
    $result = mysqli_query($con, $q);
    if($result){
-   echo "แก้ไขข้อมูลเรียบร้อย";
-   echo "<hr>";
-   echo "<a href='List.php'>แสดงข้อมูล</a>";
+   echo "<script>";
+                        echo "alert(\" แก้ไขข้อมูลสำเร็จ\");"; 
+                        echo "window.location.href = 'listDSLR_BL.php'";
+                        echo "</script>";
    }else{
-       echo "เกิดข้อผิดพลาด".mysqli_error($con);
-      
+       echo"False";
    }
    mysqli_close($con);
 

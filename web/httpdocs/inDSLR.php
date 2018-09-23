@@ -50,7 +50,7 @@
                     <b>ราคา</b>
                     <tr>
                          <td>ราคาเครื่อง</td>
-                         <td><input name="dslr_price" type="text" id=dslr_price" size="21"  > บาท</td>
+                         <td><input name="dslr_price" type="text" id="dslr_price" size="21"  > บาท</td>
                     </tr>
                     <tr> 
                         <td>ราคาต่อวัน</td> 

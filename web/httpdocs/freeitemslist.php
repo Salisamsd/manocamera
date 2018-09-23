@@ -18,6 +18,7 @@
         </style>
     </head>
     <body>
+        <a href="freeiteminsert.php">เพิ่ม</a>
         <table border="1" >
             <tr>
                 
@@ -39,7 +40,7 @@
                 <td><?php echo $row['item_model'] ;?></td>
                 <td><?php echo $row['status_name'] ;?></td>
                 <td><a href="freeitemupdate.php?ft_id=<?php echo ($row['ft_id']) ;?>">แก้ไข</td>
-                <td><a href="deleteitemupdate.php?ft_id=<?php echo ($row['ft_id']) ;?>">ลบ</td>
+                <td><a href="delete.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>
             </tr>
             <?php
                 }

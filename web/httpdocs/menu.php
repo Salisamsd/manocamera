@@ -1,4 +1,5 @@
- <nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark ">
+ 
+<nav class="navbar header-top fixed-top navbar-expand-lg  navbar-dark ">
       <a class="navbar-brand" href="#">MANOCAMERA.com</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText"
         aria-expanded="false" aria-label="Toggle navigation">
@@ -15,8 +16,8 @@
           <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">DSLR</a>
     <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
-      <a class="dropdown-item" href="/listDSLR.php">Body+Lense</a>
-      <a class="dropdown-item" href="#">Body</a>
+        <a class="dropdown-item" href="DSLR/listDSLR_Body.php">Body</a>
+        <a class="dropdown-item" href="DSLR/listDSLR_BL.php">Body+Lense</a>
 		<a class="dropdown-item" href="#">Lense</a>
       <a class="dropdown-item" href="#">All Accessory</a>
     </div>

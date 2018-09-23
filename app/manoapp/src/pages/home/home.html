@@ -1,17 +1,18 @@
-<ion-header no-border >
+<ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  
+  <h3>Ionic Menu Starter</h3>
+
+  <p>
+    <button ion-button round (click)="buttonClick()">Primary round</button>
+  </p>
+
+
 </ion-content>
-<ion-footer no-border>
-  <ion-toolbar>
-    <ion-title>MANOCAMERA</ion-title>
-  </ion-toolbar>
-</ion-footer>

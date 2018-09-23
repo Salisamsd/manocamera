@@ -50,32 +50,32 @@
        echo "ERROR:Please browe for a file  ";
        exit();
    }
-   if(move_uploaded_file($fileTmpLoc,"upload/$fileName")){
+   if(move_uploaded_file($fileTmpLoc,"action/$fileName")){
                         
                         echo "<script>";
                         echo "alert(\" เพิ่มข้อมูลสำเร็จ\");"; 
-                        echo "window.location.href = '/listDSLR.php'";
+                        echo "window.location.href = '/main.php'";
                         echo "</script>";
    }else{
        echo"False";
    }
-       $dslr_name= $_POST['dslr_name'];
+       $action_name= $_POST['action_name'];
        $brand_id = $_POST['brand_id'];
        $option_id = $_POST['option_id'];
        $type_id = $_POST['type_id'];
        $status_id =$_POST['status_id'];
-       $dslr_model=$_POST['dslr_model'];
-       $dslr_description=$_POST['dslr_description'];
-       $dslr_price=$_POST['dslr_price'];
-       $dslr_priceperday=$_POST['dslr_priceperday'];
+       $action_model=$_POST['action_model'];
+       $action_description=$_POST['action_description'];
+       $action_price=$_POST['action_price'];
+       $action_priceperday=$_POST['action_priceperday'];
        $deposit_1=$_POST['deposit_1'];
        $deposit_2=$_POST['deposit_2'];
        $con = mysqli_connect('localhost', 'manocame', 'Pern1234') or die('nooo'. mysqli_connect_error());
         mysqli_set_charset($con, "utf8");
         //echo 'ติดต่อฐานช้อมูลได้';
         mysqli_select_db($con,'main');
-        $sql = "INSERT INTO DSLR (dslr_name,brand_id,option_id,type_id,status_id,dslr_image,dslr_model,dslr_description,dslr_price,dslr_priceperday,deposit_1,deposit_2) 
-		VALUES('$dslr_name','$brand_id','$option_id','$type_id','$status_id','$fileName','$dslr_model','$dslr_description','$dslr_price','$dslr_priceperday','$deposit_1','$deposit_2')";
+        $sql = "INSERT INTO action (action_name,brand_id,option_id,type_id,status_id,action_image,action_model,action_description,action_price,action_priceperday,deposit_1,deposit_2) 
+		VALUES('$action_name','$brand_id','$option_id','$type_id','$status_id','$fileName','$action_model','$action_description','$action_price','$action_priceperday','$deposit_1','$deposit_2')";
 		
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
 	

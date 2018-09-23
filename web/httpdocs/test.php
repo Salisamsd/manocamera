@@ -1,6 +1,6 @@
 <?php 
     require 'index.php';
-    $q = 'select * from items LEFT JOIN option ON items.option_id=option.option_id LEFT JOIN brands ON items.brand_id=brands.brand_id LEFT JOIN types ON items.type_id=types.type_id LEFT JOIN Status ON items.status_id=Status.status_id WHERE brands.brand_name = "GoPro"';
+    $q = 'select * from items LEFT JOIN option ON items.option_id=option.option_id LEFT JOIN brands ON items.brand_id=brands.brand_id LEFT JOIN types ON items.type_id=types.type_id LEFT JOIN Status ON items.status_id=Status.status_id WHERE option.name = "Body" and items.brand_id="1"';
     $result = mysqli_query($con,$q);
     mysqli_set_charset($con, "utf8");
     ?>

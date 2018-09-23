@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the InfoPage page.
+ * Generated class for the RegisPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,16 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-info',
-  templateUrl: 'info.html',
+  selector: 'page-regis',
+  templateUrl: 'regis.html',
 })
-export class InfoPage {
+export class RegisPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad InfoPage');
+    console.log('ionViewDidLoad RegisPage');
   }
 
 }

@@ -50,32 +50,33 @@
        echo "ERROR:Please browe for a file  ";
        exit();
    }
-   if(move_uploaded_file($fileTmpLoc,"upload/$fileName")){
+   if(move_uploaded_file($fileTmpLoc,"../upload/$fileName")){
                         
                         echo "<script>";
                         echo "alert(\" เพิ่มข้อมูลสำเร็จ\");"; 
-                        echo "window.location.href = '/listDSLR.php'";
+                        echo "window.location.href = 'listDSLR_Body.php'";
                         echo "</script>";
    }else{
        echo"False";
    }
-       $dslr_name= $_POST['dslr_name'];
-       $brand_id = $_POST['brand_id'];
-       $option_id = $_POST['option_id'];
-       $type_id = $_POST['type_id'];
-       $status_id =$_POST['status_id'];
-       $dslr_model=$_POST['dslr_model'];
-       $dslr_description=$_POST['dslr_description'];
-       $dslr_price=$_POST['dslr_price'];
-       $dslr_priceperday=$_POST['dslr_priceperday'];
-       $deposit_1=$_POST['deposit_1'];
-       $deposit_2=$_POST['deposit_2'];
+        $item_id = $_POST['item_id'];
+        $item_model = $_POST['item_model'];
+        $item_name = $_POST['item_name'];
+        $item_description = $_POST['item_description'];
+        $option_id = $_POST['option_id'];
+        $item_price = $_POST['item_price'];
+        $item_priceperday =$_POST['item_priceperday'];
+        $deposit_1 = $_POST['deposit_1'];
+        $deposit_2 =$_POST['deposit_2'];
+        $type_id = $_POST['type_id'];
+        $brand_id = $_POST['brand_id'];
+        $status_id =$_POST['status_id'];
        $con = mysqli_connect('localhost', 'manocame', 'Pern1234') or die('nooo'. mysqli_connect_error());
         mysqli_set_charset($con, "utf8");
         //echo 'ติดต่อฐานช้อมูลได้';
         mysqli_select_db($con,'main');
-        $sql = "INSERT INTO DSLR (dslr_name,brand_id,option_id,type_id,status_id,dslr_image,dslr_model,dslr_description,dslr_price,dslr_priceperday,deposit_1,deposit_2) 
-		VALUES('$dslr_name','$brand_id','$option_id','$type_id','$status_id','$fileName','$dslr_model','$dslr_description','$dslr_price','$dslr_priceperday','$deposit_1','$deposit_2')";
+        $sql = "INSERT INTO items (item_name,brand_id,option_id,type_id,status_id,image,item_model,item_description,item_price,item_priceperday,deposit_1,deposit_2) 
+		VALUES('$item_name','$brand_id','$option_id','$type_id','$status_id','$fileName','$item_model','$item_description','$item_price','$item_priceperday','$deposit_1','$deposit_2')";
 		
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
 	

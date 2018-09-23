@@ -1,6 +1,6 @@
  <head>
         <meta charset="UTF-8">
-        <title>เพิ่มข้อมูลของ DSLR</title>
+        <title>เพิ่มข้อมูลของ Mirrorless</title>
         <style>
             label{
                 display: block;
