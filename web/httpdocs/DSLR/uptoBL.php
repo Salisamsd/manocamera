@@ -18,7 +18,7 @@
    if($result){
    echo "<script>";
                         echo "alert(\" แก้ไขข้อมูลสำเร็จ\");"; 
-                        echo "window.location.href = 'listDSLR_Body.php'";
+                        echo "window.location.href = 'listDSLR_BL.php'";
                         echo "</script>";
    }else{
        echo"False";
