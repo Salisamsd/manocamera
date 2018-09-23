@@ -40,7 +40,7 @@
                 <td style="width: 50px"><center><a class="btn btn-warning " href="insertBody.php" role="button">รายละเอียด</a></center></td>
                 <td><?php echo $row['status_name'] ;?></td>
                 <td><a href="updateBL.php?item_id=<?php echo ($row['item_id']) ;?>">แก้ไข</td>
-                <td><a href="deleteBody.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>
+                <td><a href="deleteBL.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>
             </tr>
             <?php
                 }
