@@ -1,4 +1,3 @@
-
 <?php include 'lockpage.php';?>
 <div id="wrapper">
     <?php include('menu.php');?>

@@ -1,6 +1,6 @@
 <?php include '../lockpage.php';?>
 <div id="wrapper">
-    <?php include('menuDSLR.php');?>
+    <?php include('../menu.php');?>
     <div class="container-fluid" >
         <h3 align="left">  Lense DSLR</h3>
             <a class="btn btn-info " href="listDSLR_Body.php" role="button">Body</a>

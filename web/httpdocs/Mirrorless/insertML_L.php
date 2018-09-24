@@ -3,8 +3,8 @@
 <div id="wrapper">
      <?php include('../menu.php');?>
     <div class="container-fluid">
-        <h2>DSLR</h2>
-        <form enctype="multipart/form-data" action="addBody.php" method="POST">
+        <h2>Mirrorless</h2>
+        <form enctype="multipart/form-data" action="addmlL.php" method="POST">
            <fieldset>  
             
                 <label><b>ยี่ห้อ</b></label>
@@ -19,11 +19,11 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="brand_id" value="7" id="brand_id"  >etc.
                 
                 <label><b>รูปแบบอุปกรณ์</b></label>
-                <input type="radio" name="option_id" value="1" id="option_id" checked="checked" >
-                Body    
+                <input type="radio" name="option_id" value="3" id="option_id" checked="checked" >
+                Lense    
                 
                 <label><b>ประเภทสินค้า</b></label>
-                <input type="radio" name="type_id" value="1" id="type_id" checked="checked"> DSLR 
+                <input type="radio" name="type_id" value="2" id="type_id" checked="checked"> Mirrorless 
                 
                 
                 <label>สถานะ</label>
@@ -74,5 +74,3 @@
      
     </div>
 </body>
-
-

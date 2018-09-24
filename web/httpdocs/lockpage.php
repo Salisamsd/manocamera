@@ -1,5 +1,5 @@
-
-<html lang="en">
+<!--ล็อคหน้าแสดงข้อมูล-->
+<html lang="en"><!--แท้ก้htmlส่วนเรียกข้อมูลรูปแบบ-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
+<style> 
    label{
                 display: block;
             }

@@ -1,11 +1,11 @@
 <?php
-    require '../index.php';
+    require 'index.php';
     $item_id = $_GET['item_id'];
     $qq ="select * from items where item_id='$item_id'";
     $resitem= mysqli_query($con, $qq);
     $rowitem = mysqli_fetch_array($resitem,MYSQLI_ASSOC);
 ?>
-<?php include '../lockpage.php';?>
+<?php include 'lockpage.php';?>
 
 <style>
     .block-1 {
@@ -24,7 +24,7 @@
 </style>
 
 <div id="wrapper">
-    <?php include('menuDSLR.php');?>
+    <?php include('menu.php');?>
      
        <div class="container-fluid" >
          <input type="button" class="block-1 btn btn-info" onClick="history.back()" value="<< BACK" /> 
@@ -37,11 +37,11 @@
   <div class="w3-col s6">
     <b><p>MODEL : <?php echo  $rowitem['item_model']; ?></p>
     <span>DESCRIPTION : <?php echo nl2br($rowitem['item_description'])?></span>
-    <p>ราคาเครื่อง : <?php echo  $rowitem['item_price']; ?> บาท</p>
-    <p>ราคาเช่าต่อวัน : <?php echo  $rowitem['item_priceperday']; ?> บาท</p>
+    <p>ราคาเครื่อง :<?php echo number_format($rowitem['item_price']) ;?> บาท</p>
+    <p>ราคาเช่าต่อวัน : <?php echo number_format($row['item_priceperday']) ;?> บาท</p>
     <p>วงเงินประกัน</p>
-    <p>เงินประกันแบบที่1 : <?php echo  $rowitem['deposit_1']; ?> บาท</p>
-    <p>เงินประกันแบบที่2 : <?php echo  $rowitem['deposit_2']; ?> บาท</p>
+    <p>เงินประกันแบบที่1 : <?php echo number_format($rowitem['deposit_1']) ;?> บาท</p>
+    <p>เงินประกันแบบที่2 : <?php echo number_format($rowitem['deposit_2']) ;?> บาท</p>
     
   </div>
 </div>

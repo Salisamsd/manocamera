@@ -1,6 +1,6 @@
 <?php 
     require '../index.php';
-    $q = 'select * from items LEFT JOIN option ON items.option_id=option.option_id LEFT JOIN brands ON items.brand_id=brands.brand_id LEFT JOIN types ON items.type_id=types.type_id LEFT JOIN Status ON items.status_id=Status.status_id WHERE items.option_id = "3" and items.type_id="1"';
+    $q = 'select * from items LEFT JOIN option ON items.option_id=option.option_id LEFT JOIN brands ON items.brand_id=brands.brand_id LEFT JOIN types ON items.type_id=types.type_id LEFT JOIN Status ON items.status_id=Status.status_id WHERE items.option_id = "1" and items.type_id="2"';
     $result = mysqli_query($con,$q);
     mysqli_set_charset($con, "utf8");
     ?>
@@ -16,7 +16,7 @@
                 <th style="width: 90px">วางมัดจำแบบที่1</th>
                 <th style="width: 90px">วางมัดจำแบบที่2</th>
                 <th style="width: 90px" >ประเภท</th>-->
-                <th style="width: 90px">รายละเอียด</th>
+                <th style="width: 90px" >รายละเอียด</th>
                 <th style="width: 90px">สถานะ</th>
                 <th style="width: 90px">แก้ไข</th>  
                 <th style="width: 90px">ลบ</th>
@@ -39,8 +39,8 @@
                 <td><?php echo $row['brand_name'] ;?></td>-->
                 <td style="width: 50px"><center><a class="btn btn-warning " href="../showDetail.php?item_id=<?php echo ($row['item_id']) ;?>" role="button">รายละเอียด</a></center></td>
                 <td><?php echo $row['status_name'] ;?></td>
-                <td><a href="updateL.php?item_id=<?php echo ($row['item_id']) ;?>">แก้ไข</td>
-                <td><a href="deleteL.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>
+                <td><a href="updatemlbody.php?item_id=<?php echo ($row['item_id']) ;?>">แก้ไข</td>
+                <td><a href="deletemlbody.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>
             </tr>
             <?php
                 }
