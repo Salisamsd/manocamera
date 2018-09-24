@@ -37,7 +37,7 @@
                 <td><?php echo number_format($row['deposit_2']) ;?></td>
                 <td><?php echo $row['type_name'] ;?></td>
                 <td><?php echo $row['brand_name'] ;?></td>-->
-                <td style="width: 50px"><center><a class="btn btn-warning " href="insertBody.php" role="button">รายละเอียด</a></center></td>
+                <td style="width: 50px"><center><a class="btn btn-warning " href="showDetail.php?item_id=<?php echo ($row['item_id']) ;?>" role="button">รายละเอียด</a></center></td>
                 <td><?php echo $row['status_name'] ;?></td>
                 <td><a href="updateL.php?item_id=<?php echo ($row['item_id']) ;?>">แก้ไข</td>
                 <td><a href="deleteA.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>

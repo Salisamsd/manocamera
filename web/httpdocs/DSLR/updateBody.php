@@ -1,5 +1,3 @@
-
-
 <?php
     require '../index.php';
     $item_id = $_GET['item_id'];
