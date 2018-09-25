@@ -30,13 +30,13 @@
               <a class="nav-link" href="../Mirrorless/listML_Body.php">MirrorLess</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/listDSLR.php">Video</a>
+            <a class="nav-link" href="../Video/listvdo_B.php">Video</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/listAction.php">Action</a>
+            <a class="nav-link" href="../Action/listaction_B.php">Action</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/listDSLR.php">All Accessory</a>
+            <a class="nav-link" href="../Accessary/listacc_A.php">All Accessory</a>
           </li>
           
         </ul>
