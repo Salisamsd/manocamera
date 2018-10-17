@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>เพิ่มข้อมูลของอุปกรณ์</title>
+        <style>
+            label{
+                display: block;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h2>เพิ่มสถานที่</h2>
+        <form enctype="multipart/form-data" action="addTB.php" method="POST">
+     
+              
+                <label>ชื่อสถานที่:</label><input name="Place_name" type="text" id="Place_name" size="20" >
+                
+                <br>           
+               
+               <label>รูป</label>
+            <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
+            <input name="file1" type="file" /><br>
+            
+    <input type="submit" name="upload" value="Send File" />
+    
+</form>
+
+    </body>
+</html>    
+        
+    
+
+
+

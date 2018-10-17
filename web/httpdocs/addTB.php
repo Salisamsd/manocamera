@@ -1,4 +1,4 @@
-<?php
+ <?php
  function imageResize( $ext, $ori_file, $new_file )
     {
         $max_imageSize = 400;
@@ -41,6 +41,7 @@
         imagedestroy($ori_img);
         imagedestroy($new_img);
     }
+    
    $fileName=$_FILES["file1"]["name"];
    $fileTmpLoc =$_FILES["file1"]["tmp_name"];
    $fileType=$_FILES["file1"]["200000000"];
@@ -50,33 +51,23 @@
        echo "ERROR:Please browe for a file  ";
        exit();
    }
-   if(move_uploaded_file($fileTmpLoc,"../upload/$fileName")){
+   if(move_uploaded_file($fileTmpLoc,"TB_Travel/$fileName")){
                         
                         echo "<script>";
                         echo "alert(\" เพิ่มข้อมูลสำเร็จ\");"; 
-                        echo "window.location.href = 'listML_L.php'";
+                        echo "window.location.href = 'listTBtravel.php'";
                         echo "</script>";
    }else{
        echo"False";
    }
-        $item_id = $_POST['item_id'];
-        $item_model = $_POST['item_model'];
-        $item_name = $_POST['item_name'];
-        $item_description = $_POST['item_description'];
-        $option_id = $_POST['option_id'];
-        $item_price = $_POST['item_price'];
-        $item_priceperday =$_POST['item_priceperday'];
-        $deposit_1 = $_POST['deposit_1'];
-        $deposit_2 =$_POST['deposit_2'];
-        $type_id = $_POST['type_id'];
-        $brand_id = $_POST['brand_id'];
-        $status_id =$_POST['status_id'];
+        $Place_id = $_POST['Place_id'];
+		$Place_name = $_POST['Place_name'];
        $con = mysqli_connect('localhost', 'manocame', 'Pern1234') or die('nooo'. mysqli_connect_error());
         mysqli_set_charset($con, "utf8");
         //echo 'ติดต่อฐานช้อมูลได้';
         mysqli_select_db($con,'main');
-        $sql = "INSERT INTO items (item_name,brand_id,option_id,type_id,status_id,image,item_model,item_description,item_price,item_priceperday,deposit_1,deposit_2) 
-		VALUES('$item_name','$brand_id','$option_id','$type_id','$status_id','$fileName','$item_model','$item_description','$item_price','$item_priceperday','$deposit_1','$deposit_2')";
+        $sql = "INSERT INTO TBtravel (Place_name,Place_img) 
+		VALUES('$Place_name','$fileName')";
 		
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
 	
