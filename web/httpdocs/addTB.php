@@ -42,6 +42,7 @@
         imagedestroy($new_img);
     }
     
+<<<<<<< HEAD
   // $fileName=$_FILES["file1"]["name"];
   // $fileTmpLoc =$_FILES["file1"]["tmp_name"];
    //$fileType=$_FILES["file1"]["200000000"];
@@ -92,12 +93,39 @@
             else{        
                 move_uploaded_file ($image1_tmp_name,"TB_Travel/$image1_name");
       echo 'uploaded';}}
+=======
+   $fileName=$_FILES["file1"]["name"];
+   $fileTmpLoc =$_FILES["file1"]["tmp_name"];
+   $fileType=$_FILES["file1"]["200000000"];
+   
+   $fileErrorMsg=$_FILES["file1"]["error"];
+   if(!$fileTmpLoc){
+       echo "ERROR:Please browe for a file  ";
+       exit();
+   }
+   if(move_uploaded_file($fileTmpLoc,"TB_Travel/$fileName")){
+                        
+                        echo "<script>";
+                        echo "alert(\" เพิ่มข้อมูลสำเร็จ\");"; 
+                        echo "window.location.href = 'listTBtravel.php'";
+                        echo "</script>";
+   }else{
+       echo"False";
+   }
+        $Place_id = $_POST['Place_id'];
+		$Place_name = $_POST['Place_name'];
+>>>>>>> 700b7d4e26d0b1f7c2b88eb2f98da65acd9ffb68
        $con = mysqli_connect('localhost', 'manocame', 'Pern1234') or die('nooo'. mysqli_connect_error());
         mysqli_set_charset($con, "utf8");
         //echo 'ติดต่อฐานช้อมูลได้';
         mysqli_select_db($con,'main');
+<<<<<<< HEAD
         $sql = "INSERT INTO TBtravel (Place_name,Place_img,Place_img2) 
 		VALUES('$Place_name','$image_name','$image1_name')";
+=======
+        $sql = "INSERT INTO TBtravel (Place_name,Place_img) 
+		VALUES('$Place_name','$fileName')";
+>>>>>>> 700b7d4e26d0b1f7c2b88eb2f98da65acd9ffb68
 		
 		$result = mysqli_query($con, $sql) or die ("Error in query: $sql " . mysqli_error());
 	

@@ -19,6 +19,7 @@
     </head>
     <body>
 		
+<<<<<<< HEAD
         <table border="1"  ><a href="TBtravel.php"  align="center">เพิ่ม</a>
             <tr>
                 
@@ -29,6 +30,16 @@
 		<th width="40%">รูปภาพ</th>
                 <th width="40%">รูปภาพ</th>
                 <th width="40%">รูปภาพ</th>
+=======
+        <table border="1"  align="center"  width="60%" ><a href="TBtravel.php"  align="center">เพิ่ม</a>
+            <tr>
+                
+                 <!--thคือคอลัมน์-->
+               <th width="40%"  >รหัสสถานที่</th>
+                <th  width="40%" >ชื่อสถานที่</th>
+				<th width="40%">รูปภาพ</th>
+                <!--<th width="40%">รูปภาพ</th>-->
+>>>>>>> 700b7d4e26d0b1f7c2b88eb2f98da65acd9ffb68
             </tr>
             <?php //ประกาศให้rowเอาค่าของdatabaseดึงออกมา
                 while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
@@ -36,10 +47,15 @@
             <tr>
                 <td><?php echo ($row['Place_id']);?></td>
                 <td><?php echo ($row['Place_name']);?></td>
+<<<<<<< HEAD
                 <td><?php echo ($row['explains']);?></td>
                 <td align="center" ><img src="/TB_Travel/<?php echo  $row['Place_img']; ?>"width="250px" height="250px"></td>
                <td align="center" ><img src="/TB_Travel/<?php echo  $row['Place_img2']; ?>"width="250px" height="250px"></td>
                <td align="center" ><img src="/TB_Travel/<?php echo  $row['Place_img3']; ?>"width="250px" height="250px"></td>
+=======
+                <td align="center" ><img src="/TB_Travel/<?php echo  $row['Place_img']; ?>"width="250px" height="250px"></td>
+               <!--<td align="center" ><img src="/TB_Travel/<?php echo  $row['Place_img2']; ?>"width="250px" height="250px"></td>-->
+>>>>>>> 700b7d4e26d0b1f7c2b88eb2f98da65acd9ffb68
                 
             </tr>
             <?php
