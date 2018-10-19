@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {LoginProvider} from '../../providers/login/login';
+import {HomePage} from '../home/home';
 /**
  * Generated class for the RegisPage page.
  *
@@ -14,10 +15,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'regis.html',
 })
 export class RegisPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  responseData : any;
+  userData = {"username": "","password": "", "name": "","email": ""};
+  constructor(public navCtrl: NavController, public loginProvider: LoginProvider) {
   }
+  
+  signup(){
+    this.loginProvider.postData(this.userData,'signup').then((result) => {
+     this.responseData = result;
+     if(this.responseData.userData){
+     console.log(this.responseData);
+     localStorage.setItem('userData', JSON.stringify(this.responseData));
+     this.navCtrl.push(HomePage);
+     }
+     else{ console.log("User already exists"); }
+   }, (err) => {
+     // Error log
+   });
 
+ 
+}
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegisPage');
   }

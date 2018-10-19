@@ -20,38 +20,40 @@ import ProductDao from '../../api/dao/productDao'
 })
 export class LoginPage {
 
-  url: Url
+  //url: Url
 
-  username:string;
-  password:string;
+  ///username:string;
+  //password:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http) {
-    this.url = new Url()
-    console.log(this.url.listAllProduct())
-    this.http.get(this.url.listAllProduct())
-      .subscribe(
-        data => {
-          let products = data.json() as ProductDao[]
-          for(let product of products)
-            console.log(product.name)
-        },
-        err => {
-          console.log(err)
-        }
-      )
-  }
+   // this.url = new Url()
+    //console.log(this.url.listAllProduct())
+    //this.http.get(this.url.listAllProduct())
+      //.subscribe(
+        //data => {
+          //let products = data.json() as ProductDao[]
+          //for(let product of products)
+            //console.log(product.name)
+       // },
+       // err => {
+          //console.log(err)
+       // }
+     // )
+     
+  
 
   //ionViewDidLoad() {
-  //  console.log('ionViewDidLoad LoginPage');
+  // console.log('ionViewDidLoad LoginPage');{
   //}
 
 //}
-  login() {
-    console.log("Username: "+ this.username);
-    console.log("Password: "+ this.password);
+  //login() {
+  //  console.log("Username: "+ this.username);
+  //  console.log("Password: "+ this.password);
+  //}
   }
-
-  goRegister(){
+  signUp(){
     this.navCtrl.push(RegisPage);
   }
 }
+  
