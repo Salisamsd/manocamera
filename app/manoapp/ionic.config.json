@@ -1,7 +1,0 @@
-{
-  "name": "manoapp",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "ionic-angular"
-}
