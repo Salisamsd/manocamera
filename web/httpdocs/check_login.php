@@ -31,7 +31,11 @@
 			}
 			else
 			{
-				header("location:index.html");
+                                echo "<script>";
+                                echo "alert(\"คุณไม่เป็นพนักงาน หรือ ผู้พักงาน\");"; 
+                                echo "window.history.back()";
+                                echo "</script>";
+				//header("location:index.html");
 			}
 	}
 	mysqli_close($objCon);

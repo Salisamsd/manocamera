@@ -1,9 +1,9 @@
 <?php  
-require("index.php");
+require("conn.php");
  $stopb = array();
   $sql = "select stop_id_eng,stop_id_th,stopname_eng,stopname_th,stop_lat,stop_long from stop";
 
-if($res = $con->query($sql)){  while($row=$res->fetch_assoc()){   $stop_id_eng = $row['stop_id_eng'];
+if($res = $conn->query($sql)){  while($row=$res->fetch_assoc()){   $stop_id_eng = $row['stop_id_eng'];
     $stop_id_th = $row['stop_id_th'];
           $stopname_eng = $row['stopname_eng'];
             $stopname_th = $row['stopname_th'];
@@ -14,4 +14,4 @@ if($res = $con->query($sql)){  while($row=$res->fetch_assoc()){   $stop_id_eng =
                            }
                               echo json_encode($result);
                             }
-                             ?> 
+     ?> 

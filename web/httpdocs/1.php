@@ -14,6 +14,7 @@
         <h2>เพิ่มรูปแบบ2รูปใน1แถว</h2>
         <form enctype="multipart/form-data" action="multiple_upload.php" method="POST">
             <label>ชื่อ:</label><input name="imgname" type="text" id="imgname" size="20" ><br>
+            <label>ชื่อ:</label><input type="radio" name="imgname1" value="1" id="imgname1">   
             เพิ่มรูป 1:<input name="img1" type="file" /><br>
             เพิ่มรูป 2:<input name="img2" type="file" /><br>
             <input type="submit" name="upload" value="Send File" />

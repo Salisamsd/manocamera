@@ -1,6 +1,6 @@
 <?php 
     require '../index.php';
-    $q = 'select * from items LEFT JOIN option ON items.option_id=option.option_id LEFT JOIN brands ON items.brand_id=brands.brand_id LEFT JOIN types ON items.type_id=types.type_id LEFT JOIN Status ON items.status_id=Status.status_id WHERE items.option_id = "4" and items.type_id="3"';
+    $q = 'select * from items LEFT JOIN option ON items.option_id=option.option_id LEFT JOIN brands ON items.brand_id=brands.brand_id LEFT JOIN types ON items.type_id=types.type_id LEFT JOIN Status ON items.status_id=Status.status_id WHERE items.option_id = "2" and items.type_id="3"';
     $result = mysqli_query($con,$q);
     mysqli_set_charset($con, "utf8");
     ?>
@@ -37,10 +37,10 @@
                 <td><?php echo number_format($row['deposit_2']) ;?></td>
                 <td><?php echo $row['type_name'] ;?></td>
                 <td><?php echo $row['brand_name'] ;?></td>-->
-                <td style="width: 50px"><center><a class="btn btn-warning " href="../showDetail.php?item_id=<?php echo ($row['item_id']) ;?>" role="button">รายละเอียด</a></center></td>
+                <td style="width: 50px"><center><a class="btn btn-secondary" href="../showDetail.php?item_id=<?php echo ($row['item_id']) ;?>" role="button">รายละเอียด</a></center></td>
                 <td><?php echo $row['status_name'] ;?></td>
-                <td><a href="updatevdoBL.php?item_id=<?php echo ($row['item_id']) ;?>">แก้ไข</td>
-                <td><a href="deletevdoBL.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>
+                <td><a class="btn btn-warning " href="updatevdoBL.php?item_id=<?php echo ($row['item_id']) ;?>">แก้ไข</td>
+                <td><a class="btn btn-danger " href="deletevdoBL.php?item_id=<?php echo ($row['item_id']) ;?>">ลบ</td>
             </tr>
             <?php
                 }

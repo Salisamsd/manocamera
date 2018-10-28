@@ -1,23 +1,25 @@
 
 <?php
-  require'index.php';
+ require'index.php';
   $UserID =$_POST['UserID'];
   $Username =$_POST['Username'];
-  $Password =$_POST['Password'];
   $Name =$_POST['Name'];
   $Lastname =$_POST['Lastname'];
   $Tel =$_POST['Tel'];
+  $A_Address =$_POST['A_Address'];
   $Email =$_POST['Email'];
-  $Status =$_POST['Status'];
-  
-  $q="update member set UserID='$UserID',Username='$Username',Password='$Password',Name='$Name',Lastname='$Lastname',Tel='$Tel',Email='$Email',Status='$Status' where UserID='$UserID'";
+  //$Status =$_POST['Status'];
+   $q="UPDATE member SET Username='$Username',Name='$Name',Lastname='$Lastname',A_Address='$A_Address',Tel='$Tel',Email='$Email' WHERE UserID='$UserID'";
    $result = mysqli_query($con, $q);
    if($result){
-   echo "แก้ไขข้อมูลเรียบร้อย";
-   echo "<hr>";
-   echo "<a href='listAdmin.php'>แสดงข้อมูล</a>";
+                        echo "<script>";
+                        echo "alert(\" แก้ไขข้อมูลสำเร็จ\");"; 
+                        echo "window.location.href = 'adminupdate.php'";
+                        echo "</script>";
    }else{
        echo "เกิดข้อผิดพลาด".mysqli_error($con);
       
    }
+
    mysqli_close($con);
+?>
