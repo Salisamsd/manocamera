@@ -1,7 +1,7 @@
 <?php
     $random_digit=rand(0000,9999);
     if(isset($_POST['update'])){
-    $item_id = $_POST['item_id'];
+        $item_id = $_POST['item_id'];
         $item_model = $_POST['item_model'];
         $item_name = $_POST['item_name'];
         $item_description = $_POST['item_description'];

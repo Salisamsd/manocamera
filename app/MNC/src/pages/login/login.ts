@@ -5,6 +5,9 @@ import { TabsPage } from '../tabs/tabs';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
 import 'rxjs/add/operator/map';
+import { ProfilePage } from '../profile/profile';
+import { HomePage } from '../home/home';
+import { ContactPage } from '../contact/contact';
 
 @Component({
   selector: 'page-login',
@@ -92,7 +95,7 @@ signIn(){
       });
      
       alert.present();
-      this.navCtrl.setRoot(TabsPage, data);
+      this.navCtrl.push(TabsPage,data);
   }else
   {
    let alert = this.alertCtrl.create({

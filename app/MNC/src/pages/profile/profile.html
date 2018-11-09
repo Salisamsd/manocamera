@@ -1,0 +1,13 @@
+<ion-list >
+  <ion-item>
+      <ion-label floating>telephone</ion-label>
+      <ion-input id="newtelephone" type="text" name= "newtelephone" #newtelephone [(ngModel)]="telephone"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating>email</ion-label>
+        <ion-input id="newemail" type="text" name= "newemail" #newemail [(ngModel)]="email"></ion-input>
+      </ion-item>
+</ion-list>
+<div >
+  <button ion-button  round outline block (click)="Edit()">Update</button>
+</div>
