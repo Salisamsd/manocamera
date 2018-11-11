@@ -1,3 +1,9 @@
+<ion-header>
+
+  <ion-navbar color='primary' >
+    <ion-title> แก้ไขข้อมูลส่วนตัว</ion-title>
+  </ion-navbar>
+</ion-header>
 <ion-content padding>
     <ion-item *ngFor="let item of items" >
       <h2>สวัสดี K.<b>{{item.username}}</b></h2>
@@ -15,4 +21,14 @@
           แก้ไขข้อมูลส่วนตัว
         </button> 
       </ion-list>
+      <ion-list inset>
+          <button ion-item *ngFor="let item of items" (click)="editPost(item)">
+            สถานะการเช่า
+          </button> 
+        </ion-list>
+        <ion-list inset>
+            <button ion-item *ngFor="let item of items" (click)="editPost(item)">
+              ประวัติการเช่า
+            </button> 
+          </ion-list>
     </ion-content>

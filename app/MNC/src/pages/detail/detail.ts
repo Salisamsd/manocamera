@@ -20,10 +20,12 @@ item:any;
 item_id:any;
 item_name:any;
 data:any;
+myDate:any
+@ViewChild("sdate") sdate;
+@ViewChild("edate") edate;
   constructor(public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController, public alertCtrl: AlertController) {
     this.item = navParams.data;
-    this.item_id = this.navParams.get('item_id');
-    this.item_name = this.navParams.get('item_name');
+    new Date().toISOString();
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
@@ -33,6 +35,35 @@ data:any;
   
     this.item_id = this.navParams.get('item_id');
     this.item_name = this.navParams.get('item_name');
+    this.item_id = this.navParams.get('item_id');
+    this.item_name = this.navParams.get('item_name');
+
+    if(this.sdate.value=="" ){
+
+      let alert = this.alertCtrl.create({
+     
+      title:"โปรดระบุวันรับอุปกรณ์",
+      subTitle:"",
+      buttons: ['OK']
+      });
+     
+      alert.present();
+       } else
+     
+      if(this.edate.value==""){
+     
+      let alert = this.alertCtrl.create({
+     
+      title:"โปรดระบุวันคืนอุปกรณ์",
+      subTitle:"",
+      buttons: ['OK']
+      });
+     
+      alert.present();
+           
+     }
+      else
+      {
 
     var headers = new Headers();
     headers.append("Accept", 'application/json');
@@ -42,7 +73,9 @@ data:any;
 
       let data = {
         item_id: this.item_id,
-        item_name: this.item_name
+        item_name: this.item_name,
+        sdate: this.sdate.value,
+        edate: this.edate.value
       };
 
       
@@ -82,7 +115,4 @@ data:any;
     } 
   });
   });
-   }
-  
-  }
-  
+}}}
