@@ -24,10 +24,14 @@ export class SignupPage {
   @ViewChild("mobile") mobile;
   @ViewChild("password") password;
   
-  
+ 
+
     constructor(public navCtrl: NavController, public alertCtrl: AlertController,  private http: Http,  public loading: LoadingController) {
   
     }
+    
+   
+  
   
     Register(){
    //// check to confirm the username, email, telephone and password fields are filled

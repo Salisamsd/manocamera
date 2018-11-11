@@ -95,7 +95,7 @@ signIn(){
       });
      
       alert.present();
-      this.navCtrl.push(TabsPage,data);
+      this.navCtrl.setRoot(TabsPage,data);
   }else
   {
    let alert = this.alertCtrl.create({
