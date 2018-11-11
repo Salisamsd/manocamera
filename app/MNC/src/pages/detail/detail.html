@@ -22,8 +22,7 @@
     <p><b>{{item.item_description}}</b></p>
     <p><b>วงเงินประกัน <br> รูปแบบการเช่า ที่ 1 : {{item.deposit_1}} บาท <br> รูปแบบการเช่า ที่ 2 : {{item.deposit_2}} บาท </b></p>
     <p ><b>ราคาเช่าต่อวัน<br>{{item.item_priceperday}} บาท </b></p>
-    <button (click)="checkque(data)">
-      ดูรายละเอียด </button>
+    
 
       <ion-item>
         <ion-label color="primary">วันที่รับ</ion-label>
@@ -32,9 +31,10 @@
 
       <ion-item>
         <ion-label color="primary">วันที่คืน</ion-label>
-        <ion-input   type="date" placeholder="edate" name="edate" #sdate></ion-input>
+        <ion-input  type="date" placeholder="edate" name="edate" #sdate></ion-input>
       </ion-item>
-  
+      <button (click)="checkque(data)">
+      ดูรายละเอียด </button>
   </ion-card-content>
   
 </ion-card>
