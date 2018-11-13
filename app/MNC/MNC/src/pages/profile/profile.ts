@@ -35,20 +35,21 @@ oldEmailValue:any;
 @ViewChild("newtelephone")newtelephone;
 @ViewChild("newemail")newemail;
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams,  private http: Http,  public loading: LoadingController) {
-  this.telephone = this.navParams.get('telephone') ;
-
-    this.email = this.navParams.get('email') ;}
-
-  Edit(){
-    
+  }
+  ngOnInit(){
     this.username = this.navParams.get('username');
     
-    
+    this.telephone = this.navParams.get('telephone') ;
+
+    this.email = this.navParams.get('email') ;
 
     this.oldTelephoneValue = this.navParams.get('telephone') ;
 
     this.oldEmailValue = this.navParams.get('email') ;
 
+  }
+
+  Edit(){
     if(this.newtelephone.value=="" ){
 
       let alert = this.alertCtrl.create({
@@ -89,8 +90,7 @@ oldEmailValue:any;
       let options = new RequestOptions({ headers: headers });
  
     let data = {
-    
-          username : this.username,
+ 
           telephone: this.oldTelephoneValue,
  
           email: this.oldEmailValue,
@@ -117,7 +117,7 @@ oldEmailValue:any;
  
    loader.dismiss()
  
-  if(res=='data update successfull'){
+  if(res=='data updated successfully'){
  
     let alert = this.alertCtrl.create({
  
@@ -131,7 +131,7 @@ oldEmailValue:any;
  
       alert.present();
  
-   //this.navCtrl.push(ContactPage);
+   this.navCtrl.push(ContactPage);
  
   }else
  
@@ -155,14 +155,5 @@ oldEmailValue:any;
 });
      }
     }
-    doRefresh(refresher) {
-      console.log('Begin async operation', refresher);
-  
-      setTimeout(() => {
-        console.log('Async operation has ended');
-        refresher.complete();
-      }, 2000);
-    }
   }
-  
  

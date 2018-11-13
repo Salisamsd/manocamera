@@ -26,14 +26,14 @@
 
       <ion-item>
         <ion-label color="primary">วันที่รับ</ion-label>
-        <ion-input    type="date" placeholder="sdate" name="sdate" #sdate [(ngModel)]="myDate"></ion-input>
+        <ion-input   type="date" placeholder="sdate" name="sdate" #sdate></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label color="primary">วันที่คืน</ion-label>
-        <ion-input  type="date" placeholder="edate" name="edate" #edate  ></ion-input>
+        <ion-input  type="date" placeholder="edate" name="edate" #edate></ion-input>
       </ion-item>
-      <button ion-button full color="energy" (click)="checkque(data)">
+      <button (click)="checkque(data)">
       ดูรายละเอียด </button>
   </ion-card-content>
   
