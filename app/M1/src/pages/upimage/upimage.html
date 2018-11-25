@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar color='primary' >
+    <ion-title> แก้ไขข้อมูลส่วนตัว</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content >
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content>
+          
+        </ion-refresher-content>
+      </ion-refresher>
+<ion-list >
+  <ion-item>
+      <ion-label floating>username</ion-label>
+      <ion-input id="newtelephone" type="text" name= "newtelephone" disabled="true" #newtelephone [(ngModel)]="username"></ion-input>
+    </ion-item>
+    
+      
+</ion-list>
+<div >
+  <!--<button ion-button  round outline block (click)="Edit()">Update</button>-->
+  <button ion-button (click)="takePhoto()" full color="danger">Take Photo</button>
+  <button ion-button (click)="getPhoto()" full color="light">Get Photo</button>
+  <p align="center"><img src="{{ myphoto }}"></p>
+</div>
+</ion-content>
