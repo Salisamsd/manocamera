@@ -18,13 +18,17 @@ import { CartPage } from '../pages/cart/cart';
 import { CheckoutPage } from '../pages/checkout/checkout';
 import { CheckdetailPage } from '../pages/checkdetail/checkdetail';
 import { UpimagePage } from '../pages/upimage/upimage';
+import { RentformPage } from '../pages/rentform/rentform';
+import { RentPage } from '../pages/rent/rent';
 
-
+import { File } from '@ionic-native/file';
+import { FileTransfer} from '@ionic-native/file-transfer';
 import { Camera } from '@ionic-native/camera';
 import { HttpModule } from '@angular/http';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import { IonicStorageModule } from '@ionic/storage';
     CartPage,
     CheckoutPage,
     CheckdetailPage,
-    UpimagePage
+    UpimagePage,
+    RentformPage,
+    RentPage
   ],
   imports: [
     BrowserModule,
@@ -68,11 +74,12 @@ import { IonicStorageModule } from '@ionic/storage';
     CartPage,
     CheckoutPage,
     CheckdetailPage,
-    UpimagePage
+    UpimagePage,
+    RentformPage,RentPage
   ],
   providers: [
     StatusBar,
-    SplashScreen,Camera,
+    SplashScreen,Camera,FileTransfer,File,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

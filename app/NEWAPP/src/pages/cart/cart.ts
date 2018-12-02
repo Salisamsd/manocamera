@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,ViewController } from 'ionic-angular';
+import { NavController, NavParams,ViewController,AlertController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import { CheckoutPage } from '../checkout/checkout';
 import { HomePage } from '../home/home';
+import {Http, Headers, RequestOptions}  from "@angular/http";
+import { LoadingController } from 'ionic-angular';
 /**
  * Generated class for the CartPage page.
  *
@@ -32,7 +34,7 @@ export class CartPage {
   sdate:any;
   edate:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public storage :Storage,public viewCtrl : ViewController ) {
+  constructor(private http: Http,public loading: LoadingController,public alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams,public storage :Storage,public viewCtrl : ViewController ) {
   
   this.total = 0.0;
 
@@ -87,7 +89,7 @@ export class CartPage {
     })    
   
    }
-  
+   
   
   
 }

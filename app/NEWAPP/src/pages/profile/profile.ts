@@ -39,9 +39,9 @@ oldEmailValue:any;
 
     this.email = this.navParams.get('email') ;}
     
-    ionViewDidLoad() {
-  
-      console.log('ionViewDidLoad ProfilePage');
+    ionViewDidEnter () {
+      
+      console.log('ionViewDidEnter  ProfilePage');
       console.log(this.navParams.data);
     }
 
@@ -115,7 +115,7 @@ oldEmailValue:any;
  
    loader.present().then(() => {
  
-  this.http.post('http://manocamera.com/edit_data.php',data, options)
+  this.http.post('http://manocamera.com/api/edit_data.php',data, options)
  
   .map(res => res.json())
  
@@ -161,16 +161,20 @@ oldEmailValue:any;
 });
      }
     }
-    doRefresh(refresher) {
-      console.log('Begin async operation', refresher);
+    //doRefresh(refresher) {
+      
+      //console.log('Begin async operation', refresher);
   
-      setTimeout(() => {
-        console.log('Async operation has ended');
-        refresher.complete();
-      }, 2000);
-    }
+      //setTimeout(() => {
+        //this.jobsData.load().then(res => {
+        //  this.jobs = res;
+       // }); 
+        //refresher.complete();
+      //}, 2000);
+   // }
 
    
+    
   }
   
  

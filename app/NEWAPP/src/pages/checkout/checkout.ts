@@ -25,6 +25,7 @@ export class CheckoutPage {
   paymentMethods:any[];
   paymentMethod:any;
   Url:any;
+  order:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,public storage :Storage,  private http: Http,  public loading: LoadingController) {
   this.username = this.navParams.get('username');
   this.username = navParams.data;
@@ -37,7 +38,7 @@ export class CheckoutPage {
     { method_id:"2",method_title:"รูปแบบที่ 2 ไม่ยื่นเอกสาร"}
   ];
   this.Url = ({
-    url:"http://manocamera.com/api/list_all_product.php"
+    url:"http://manocamera.com/api/rent.php"
   });
 }
   listRent(){
@@ -73,10 +74,12 @@ export class CheckoutPage {
           });
         });
 
-        //data.line_items = orderItems;
-        //let orderData:any ={};
-        //orderData.order = data;
-      
+        data.line_items = orderItems;
+        let orderData:any ={};
+        orderData.order = data;
+        this.Url.postAsync(orderData).then((data)=>{
+        console.log(JSON.parse(this.order.body).order);
+      })
         
         
       })

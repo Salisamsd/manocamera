@@ -53,7 +53,7 @@ export class ContactPage {
   
   loader.present().then(() => {
   
-  this.http.post('http://manocamera.com/retrieve_data.php',data, options)
+  this.http.post('http://manocamera.com/api/retrieve_data.php',data, options)
   
   .map(res => res.json())
   

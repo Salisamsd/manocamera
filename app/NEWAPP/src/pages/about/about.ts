@@ -7,23 +7,30 @@ import { LoadingController } from 'ionic-angular';
   templateUrl: 'about.html'
 })
 export class AboutPage {
+  
+
+  
+  
   data:any;
   username:any;
   items:any;
   telephone:any;
   email:any;
+  
   constructor(public navCtrl: NavController,public navParams: NavParams,private http: Http,  public loading: LoadingController) {
-    this.username = this.navParams.get('username');
-      this.username = navParams.data;
-  }
-  ionViewDidLoad() {
+    
+  
+this.username = this.navParams.get('username');
+ this.username = navParams.data;
+}
+ ionViewDidLoad() {
   
     console.log('ionViewDidLoad AboutPage');
     console.log(this.navParams.data);
   }
-  ngOnInit(){
+    ngOnInit(){
   
-    this.username = this.navParams.get('username');
+  this.username = this.navParams.get('username');
 
    
 
@@ -39,7 +46,7 @@ let data = {
 
     username: this.username
 
-     };
+    };
 
 let loader = this.loading.create({
 
@@ -49,19 +56,19 @@ content: 'Processing please wait...',
 
 loader.present().then(() => {
 
-this.http.post('http://manocamera.com/retrieve_data.php',data, options)
+this.http.post('http://manocamera.com/api/retrieve_data.php',data, options)
 
 .map(res => res.json())
 
-    .subscribe(res => {
+   .subscribe(res => {
 
-     loader.dismiss()
+    loader.dismiss()
 
-    this.items=res.server_response;
+   this.items=res.server_response;
 
-    console.log(this.items);
+   console.log(this.items);
 
-    });
+   });
 
     });
 

@@ -22,8 +22,13 @@ export class DslrPage {
    items3:any=[];
    choice: string = "body";
   isAndroid: boolean = false;
-    
+  data:any;
+  username:any;
+  telephone:any;
+  email:any;
   constructor(public navCtrl: NavController, public navParams: NavParams,private http: Http,platform: Platform) {
+    this.username = this.navParams.get('username');
+    this.username = navParams.data;
     this.isAndroid = platform.is('android');
     
     this.http.get('http://manocamera.com/api/list_all_product.php')
@@ -58,8 +63,12 @@ export class DslrPage {
   }
 
   detail(item){
+    let data = {
+      username: this.username
+      
+    };
   
-  this.navCtrl.push(DetailPage,item)
+  this.navCtrl.push(DetailPage,{item,data})
   
     }
     

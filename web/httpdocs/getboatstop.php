@@ -2,8 +2,9 @@
 require("conn.php");
  $stopb = array();
   $sql = "select stop_id_eng,stop_id_th,stopname_eng,stopname_th,stop_lat,stop_long from stop";
-
-if($res = $conn->query($sql)){  while($row=$res->fetch_assoc()){   $stop_id_eng = $row['stop_id_eng'];
+												
+										//ใช้คืนค่าของข้อมูลที่อยู่ใน stop_id_end ในrow นั้นๆ
+if($res = $conn->query($sql)){  while($row=$res->fetch_assoc()){   $stop_id_eng = $row['stop_id_eng'];  
     $stop_id_th = $row['stop_id_th'];
           $stopname_eng = $row['stopname_eng'];
             $stopname_th = $row['stopname_th'];

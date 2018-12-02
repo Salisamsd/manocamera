@@ -19,9 +19,19 @@ export class HomePage {
   items:any;
   telephone:any;
   email:any;
+  items1:any=[];
   constructor(public app: App,public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController,public menuCtrl: MenuController,public alertCtrl: AlertController,) {
     this.username = this.navParams.get('username');
     this.username = navParams.data;
+
+    this.http.get('http://manocamera.com/api/list_dslr_BL.php')
+    .map(res => res.json())
+    .subscribe(data =>
+    {
+      this.items1 = data["data"]; 
+      
+    });
+
   }
 
   ionViewDidLoad() {
@@ -58,7 +68,7 @@ content: 'Processing please wait...',
 
 loader.present().then(() => {
 
-this.http.post('http://manocamera.com/retrieve_data.php',data, options)
+this.http.post('http://manocamera.com/api/retrieve_data.php',data, options)
 
 .map(res => res.json())
 

@@ -1,9 +1,9 @@
 import { Component,ViewChild } from '@angular/core';
-import { NavController , AlertController , NavParams } from 'ionic-angular';
+import { NavController , AlertController , NavParams , ModalController } from 'ionic-angular';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
 import { AddCartPage } from '../add-cart/add-cart';
-
+import { RentformPage } from '../rentform/rentform';
 /**
  * Generated class for the DetailPage page.
  *
@@ -26,18 +26,26 @@ deposit_1:any;
 deposit_2:any;
 data:any;
 total:any;
+daysDiff:any;
+username:any;
+dropdt:any;
+pickdt:any;
 
 @ViewChild("sdate") sdate;
 @ViewChild("edate") edate;
-  constructor(public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController, public alertCtrl: AlertController) {
-    this.item = navParams.data;
+@ViewChild("optionRent") optionRent;
+  constructor(public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController, public alertCtrl: AlertController,public modalCtrl: ModalController) {
+    
     this.item_id = this.navParams.get('item_id');
     this.item_name = this.navParams.get('item_name');
     this.img1 = this.navParams.get('img1');
     this.item_priceperday = this.navParams.get('item_priceperday');
     this.deposit_1 =this.navParams.get('deposit_1');
     this.deposit_2 =this.navParams.get('deposit_2');
-
+    this.username = this.navParams.get('username');
+    this.username = this.navParams.get('username');
+    this.optionRent = this.navParams.get('optionRent');
+    this.item = navParams.data;
     
 
   }
@@ -84,16 +92,35 @@ total:any;
     
       alert.present();
     
-     }else{
+     }else
+    
+     if(this.edate.value==this.sdate.value){
+   
+     let alert = this.alertCtrl.create({
+   
+     title:"โปรดกรอกวันที่คืนเครื่องอีกครั้ง",
+   
+     //subTitle:"Country field is empty",
+   
+     buttons: ['OK']
+   
+     });
+   
+     alert.present();
+   
+    }else{
 
     
     var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
     let options = new RequestOptions({ headers: headers });
-
+    let dropdt = +new Date(this.edate.value);
+    let pickdt = +new Date(this.sdate.value);
 
       let data = {
+        
+        daysDiff : Math.round((dropdt-pickdt)/86400000),
         item_id: this.item_id,
         item_name: this.item_name,
         sdate: this.sdate.value,
@@ -102,6 +129,8 @@ total:any;
         item_priceperday : this.item_priceperday,
         deposit_1 : this.deposit_1,
         deposit_2 : this.deposit_2,
+        total: this.item_priceperday*Math.round(dropdt-pickdt)/86400000
+       // "diffrentDay" : daysDiff
         //total : (this.edate.value - this.sdate.value)
       };
 
@@ -114,7 +143,7 @@ total:any;
  loader.present().then(() => {
 
 
-  this.http.post('http://manocamera.com/Newcq.php',data,options)
+  this.http.post('http://manocamera.com/api/Newcq.php',data,options)
   .map(res => res.json())
   .subscribe(res => {
   console.log(res)
@@ -128,7 +157,7 @@ total:any;
       });
      
       alert.present();
-      this.navCtrl.push(AddCartPage,data);
+     this.navCtrl.push(AddCartPage,data);
   }else
   {
    let alert = this.alertCtrl.create({
@@ -145,4 +174,9 @@ total:any;
    }
   
   }
+  checkdetail(){
+  
+  this.modalCtrl.create(RentformPage).present();
+}
+
 }

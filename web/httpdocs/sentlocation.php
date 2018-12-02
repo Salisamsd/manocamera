@@ -1,16 +1,13 @@
 <?php    
 		require("conn.php");       
-$lat = $_POST["lat"];     
-$lon = $_POST["lon"];  
-	$boat = $_POST["boat"];  
-	$type = $_POST["type"];  
-$lineboat = $_POST["lineboat"]; 
- $statement = mysqli_prepare($conn, "INSERT INTO location ( lat,lon,id_boat,id_type,id_line) VALUES ($lat,$lon,$boat,$type,$lineboat)"); 
+	$lat = $_POST["lat"];     
+	$lon = $_POST["lon"];  
+	
+ 	$statement = mysqli_prepare($conn, "INSERT INTO location (lat,lon) VALUES ($lat,$lon)"); 
  mysqli_stmt_execute($statement);         
 $response = array();     
 $response["online"] = true;            
 echo json_encode($response); 
  	
 ?> 
- 
- 
+	

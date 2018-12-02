@@ -33,8 +33,15 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
 $username = stripslashes($username);
 $password = stripslashes($password);
 
+$check ="SELECT * FROM users WHERE username='$username'";
+ $result = mysqli_query($con,$check);
+ $num = mysqli_num_rows($result);
 
-
+if($num >0 ){
+	$response= "มีคนใช้ Username แล้ว";
+} 
+else{
+	
 $sql = "INSERT INTO users (username, password, telephone, email)
 VALUES ('$username', '$password', '$mobile', '$email')";
 
@@ -45,7 +52,7 @@ if ($con->query($sql) === TRUE) {
 } else {
    $response="Error: " . $sql . "<br>" . $db->error;
 }
- 
+}
   
 	echo json_encode( $response);
 

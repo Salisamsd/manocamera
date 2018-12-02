@@ -44,6 +44,7 @@ export class DslrPage {
     .subscribe(data =>
     {
       this.items = data["data"]; 
+      
     });
 
     this.http.get('http://manocamera.com/api/list_dslr_BL.php')
@@ -51,6 +52,7 @@ export class DslrPage {
     .subscribe(data =>
     {
       this.items1 = data["data"]; 
+      
     });
 
     this.http.get('http://manocamera.com/api/list_dslr_L.php')
@@ -58,6 +60,7 @@ export class DslrPage {
     .subscribe(data =>
     {
       this.items2 = data["data"]; 
+      
     });
 
     this.http.get('http://manocamera.com/api/list_dslr_A.php')
@@ -65,6 +68,8 @@ export class DslrPage {
     .subscribe(data =>
     {
       this.items3 = data["data"]; 
+     
+      
     });
     
 
@@ -73,7 +78,7 @@ export class DslrPage {
 
   detail(item){
     
-  this.navCtrl.push(DetailPage,item);
+    this.navCtrl.push(DetailPage,item);
   
     }
     

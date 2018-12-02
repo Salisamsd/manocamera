@@ -20,12 +20,15 @@ item:any;
 item_id:any;
 item_name:any;
 data:any;
+username:any;
 @ViewChild("sdate") sdate;
 @ViewChild("edate") edate;
   constructor(public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController, public alertCtrl: AlertController) {
     this.item = navParams.data;
     this.item_id = this.navParams.get('item_id');
     this.item_name = this.navParams.get('item_name');
+    this.username = this.navParams.get('username');
+      this.username = navParams.data;
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
@@ -35,7 +38,7 @@ data:any;
   
     this.item_id = this.navParams.get('item_id');
     this.item_name = this.navParams.get('item_name');
-
+    this.username = this.navParams.get('username');
     var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json' );
@@ -46,7 +49,8 @@ data:any;
         item_id: this.item_id,
         item_name: this.item_name,
         sdate: this.sdate.value,
-        edate: this.edate.value
+        edate: this.edate.value,
+        username:this.username
       };
 
       
@@ -58,7 +62,7 @@ data:any;
  loader.present().then(() => {
 
 
-  this.http.post('http://manocamera.com/Newcq.php',data,options)
+  this.http.post('http://manocamera.com/api/Newcq.php',data,options)
   .map(res => res.json())
   .subscribe(res => {
   console.log(res)

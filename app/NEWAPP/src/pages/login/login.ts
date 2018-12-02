@@ -81,7 +81,7 @@ signIn(){
  loader.present().then(() => {
 
 
-  this.http.post('http://manocamera.com/login.php',data,options)
+  this.http.post('http://manocamera.com/api/login.php',data,options)
   .map(res => res.json())
   .subscribe(res => {
   console.log(res)

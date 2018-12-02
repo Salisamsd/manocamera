@@ -58,12 +58,12 @@
   <div class="w3-col s6">
     <b><p>MODEL : <?php echo  $rowitem['item_model']; ?></p>
     <span>DESCRIPTION : <?php echo nl2br($rowitem['item_description'])?></span>
-    <p>ราคาเครื่อง :<?php echo number_format($rowitem['item_price']) ;?> บาท</p>
-     <p>ราคาเช่าต่อวัน :<?php echo number_format($rowitem['item_priceperday']) ;?> บาท</p>
+    <p>ราคาเครื่อง :<?php echo ($rowitem['item_price']) ;?> บาท</p>
+     <p>ราคาเช่าต่อวัน :<?php echo ($rowitem['item_priceperday']) ;?> บาท</p>
     
     <p>วงเงินประกัน</p>
-    <p>เงินประกันแบบที่1 : <?php echo number_format($rowitem['deposit_1']) ;?> บาท</p>
-    <p>เงินประกันแบบที่2 : <?php echo number_format($rowitem['deposit_2']) ;?> บาท</p>
+    <p>เงินประกันแบบที่1 : <?php echo ($rowitem['deposit_1']) ;?> บาท</p>
+    <p>เงินประกันแบบที่2 : <?php echo ($rowitem['deposit_2']) ;?> บาท</p>
     
   </div>
 </div>
