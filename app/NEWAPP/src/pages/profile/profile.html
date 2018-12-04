@@ -6,15 +6,18 @@
 
 </ion-header>
 <ion-content >
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content>
-          
-        </ion-refresher-content>
-      </ion-refresher>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
 <ion-list >
   <ion-item>
       <ion-label floating>telephone</ion-label>
-      <ion-input id="newtelephone" type="text" name= "newtelephone" disabled="true" #newtelephone [(ngModel)]="telephone"></ion-input>
+      <ion-input id="newtelephone" type="text" name= "newtelephone" #newtelephone [(ngModel)]="telephone"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label floating>email</ion-label>

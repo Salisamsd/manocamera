@@ -105,7 +105,7 @@ export class SignupPage {
     });
   
    loader.present().then(() => {
-  this.http.post('http://manocamera.com/register.php',data, options)
+  this.http.post('http://manocamera.com/api/register.php',data, options)
   .map(res => res.json())
   .subscribe(res => {
   

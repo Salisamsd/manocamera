@@ -92,7 +92,7 @@ export class UpimagePage {
         // imageData is either a base64 encoded string or a file URI
         // If it's base64:
         this.myphoto = 'data:image/jpeg;base64,' + imageData;
-        this.username = this.navParams.get('username') ;
+       
       }, (err) => {
         // Handle error
       });
@@ -114,11 +114,11 @@ export class UpimagePage {
       //random int
       var random = Math.floor(Math.random() * 100);
       var today = new Date().toISOString(); 
-      var username =this.username
+      
       //option transfer
       let options: FileUploadOptions = {
         fileKey: 'photo',
-        fileName: "myImage_" + username + random + today +".jpg",//
+        fileName: "myImage_"+ random + today +".jpg",//
         chunkedMode: false,
         httpMethod: 'post',
         mimeType: "image/jpeg",

@@ -3,7 +3,7 @@ import { NavController , ModalController , NavParams } from 'ionic-angular';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
-import { CartPage } from '../cart/cart';
+import { HistoryPage } from '../history/history';
 import { UpimagePage } from '../upimage/upimage';
 @Component({
   selector: 'page-contact',
@@ -85,13 +85,9 @@ export class ContactPage {
             this.navCtrl.push(UpimagePage,item)
             
               }
-          openCart(){
-            let data = {
-  
-              username: this.username
-          
-               };
-            
-      this.modalCtrl.create(CartPage,data).present();
-    }
+              History(item){
+
+                this.navCtrl.push(HistoryPage,item)
+                
+                  }
 }

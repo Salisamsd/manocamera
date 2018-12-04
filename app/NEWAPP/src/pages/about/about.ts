@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController , ModalController , NavParams } from 'ionic-angular';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
+import { HistoryPage } from '../history/history';
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -73,4 +74,12 @@ this.http.post('http://manocamera.com/api/retrieve_data.php',data, options)
     });
 
      }
+    
+     editPost(item){
+    
+      this.navCtrl.push(HistoryPage,item)
+  
+    }
 }
+    
+  

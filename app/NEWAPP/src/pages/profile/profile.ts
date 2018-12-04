@@ -37,14 +37,61 @@ oldEmailValue:any;
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams,  private http: Http,  public loading: LoadingController) {
     this.telephone = this.navParams.get('telephone') ;
 
-    this.email = this.navParams.get('email') ;}
+    this.email = this.navParams.get('email') ;
     
-    ionViewDidEnter () {
+    this.username = this.navParams.get('username');
+
+         }
+    ionViewWillEnter() {
+    this.load();
       
-      console.log('ionViewDidEnter  ProfilePage');
       console.log(this.navParams.data);
     }
-
+    load() {
+  
+      this.username = this.navParams.get('username');
+  
+     
+  
+  var headers = new Headers();
+  
+  headers.append("Accept", 'application/json');
+  
+  headers.append('Content-Type', 'application/json' );
+  
+  let options = new RequestOptions({ headers: headers });
+  
+  let data = {
+  
+      username: this.username
+  
+       };
+  
+  let loader = this.loading.create({
+  
+  content: 'Processing please wait...',
+  
+  });
+  
+  loader.present().then(() => {
+  
+  this.http.post('http://manocamera.com/api/retrieve_data.php',data, options)
+  
+  .map(res => res.json())
+  
+      .subscribe(res => {
+  
+       loader.dismiss()
+  
+      this.items=res.server_response;
+  
+      console.log(this.items);
+  
+      });
+  
+      });
+  
+       }
   Edit(){
     
     this.username = this.navParams.get('username');
@@ -173,7 +220,15 @@ oldEmailValue:any;
       //}, 2000);
    // }
 
-   
+   doRefresh(refresher) {
+  console.log('Begin async operation', refresher);
+
+  setTimeout(() => {
+    this.load();
+    console.log('Async operation has ended');
+    refresher.complete();
+  }, 2000);
+}
     
   }
   

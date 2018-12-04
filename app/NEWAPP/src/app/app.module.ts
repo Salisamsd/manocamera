@@ -20,6 +20,8 @@ import { CheckdetailPage } from '../pages/checkdetail/checkdetail';
 import { UpimagePage } from '../pages/upimage/upimage';
 import { RentformPage } from '../pages/rentform/rentform';
 import { RentPage } from '../pages/rent/rent';
+import { HistoryPage } from '../pages/history/history';
+import { AccordionComponent } from '../components/accordion/accordion';
 
 import { File } from '@ionic-native/file';
 import { FileTransfer} from '@ionic-native/file-transfer';
@@ -49,7 +51,9 @@ import { IonicStorageModule } from '@ionic/storage';
     CheckdetailPage,
     UpimagePage,
     RentformPage,
-    RentPage
+    RentPage,
+    HistoryPage,
+    AccordionComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +79,7 @@ import { IonicStorageModule } from '@ionic/storage';
     CheckoutPage,
     CheckdetailPage,
     UpimagePage,
-    RentformPage,RentPage
+    RentformPage,RentPage,HistoryPage
   ],
   providers: [
     StatusBar,
