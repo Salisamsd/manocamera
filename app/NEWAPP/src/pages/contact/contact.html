@@ -9,14 +9,23 @@
       </ion-list>
       <ion-list inset>
         <button ion-item *ngFor="let item of items" (click)="upPost(item)">
-        <ion-icon name="person"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;แก้ไขข้อมูลส่วนตัว
+        <ion-icon name="person"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;อัพโหลดเอกสาร
         </button> 
         
       </ion-list>
       <ion-list inset>
           <button ion-item *ngFor="let item of items" (click)="History(item)">
-          <ion-icon name="person"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;ประวัติการเช่า
+          <ion-icon name="person"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;รายการเช่า
           </button> 
         </ion-list>
-      
+        <ion-list inset>
+            <button ion-item *ngFor="let item of items" (click)="History(item)">
+            <ion-icon name="person"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;ประวัติรายการเช่า
+            </button> 
+          </ion-list>
+        <ion-list inset>
+            <button ion-item *ngFor="let item of items" (click)="logout()">
+            <ion-icon name="person"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;ออกจากระบบ
+            </button> 
+          </ion-list>
     </ion-content>

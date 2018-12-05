@@ -1,10 +1,12 @@
 import { Component,ViewChild } from '@angular/core';
-import { NavController , ModalController , NavParams } from 'ionic-angular';
+import { NavController ,AlertController, ModalController , NavParams } from 'ionic-angular';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
 import { ProfilePage } from '../profile/profile';
 import { HistoryPage } from '../history/history';
 import { UpimagePage } from '../upimage/upimage';
+import { WelcomePage } from '../welcome/welcome';
+import {App} from 'ionic-angular';
 @Component({
   selector: 'page-contact',
   templateUrl: 'contact.html'
@@ -15,7 +17,8 @@ export class ContactPage {
   items:any;
   telephone:any;
   email:any;
-    constructor(public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController,public modalCtrl: ModalController) {
+  
+    constructor(public alertCtrl: AlertController,public app:App,public navCtrl: NavController, public navParams: NavParams,  private http: Http,  public loading: LoadingController,public modalCtrl: ModalController) {
       this.username = this.navParams.get('username');
       this.username = navParams.data;
     }
@@ -90,4 +93,32 @@ export class ContactPage {
                 this.navCtrl.push(HistoryPage,item)
                 
                   }
+                  logout(){
+                   
+                    let alert = this.alertCtrl.create({
+                      title: 'ลงชื่ออก',
+                      message: 'คุณแน่ใจที่จะลงชื่อออก ?',
+                      buttons: [
+                        {
+                          text: 'ยกเลิก',
+                          role: 'cancel',
+                          handler: () => {
+                            console.log('Cancel clicked');
+                          }
+                        },
+                        {
+                          text: 'ตกลง',
+                          handler: () => {
+                            this.app.getRootNav().setRoot(WelcomePage);
+                          }
+                        }
+                      ]
+                    });
+                    alert.present();
+                        
+                   
+                      } 
+                    
+                   // this.navCtrl.setPages(WelcomePage)
+                  
 }

@@ -1,23 +1,59 @@
 <ion-header>
 
   <ion-navbar color='primary' >
-    <ion-title> แก้ไขข้อมูลส่วนตัว</ion-title>
+    <ion-title> อัพโหลดเอกสาร </ion-title>
   </ion-navbar>
 
 </ion-header>
+
 <ion-content >
-    <ion-refresher (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content>
-          
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="circles"
+          refreshingText="Refreshing...">
         </ion-refresher-content>
       </ion-refresher>
 
-<div >
-  <!--<button ion-button  round outline block (click)="Edit()">Update</button>-->
-  <p >{{username }}</p>
-  <button ion-button (click)="takePhoto()" full color="danger">Take Photo</button>
-  <button ion-button (click)="getImage()" full color="primary">Get Photo</button>
-  <button ion-button (click)="uploadImage()" full color="danger">Up Photo</button>
-  <p ><img src="{{myphoto }}"></p>
-</div>
+    <ion-list>
+        <ion-item >
+          <ion-thumbnail item-left>
+              <ion-item *ngFor="let item of items"  >
+              <img src="http://www.manocamera.com/userUpload/{{item.img1}}" /></ion-item>
+           </ion-thumbnail>
+           <ion-item *ngFor="let item of items"  ><label>สถานะ : {{item.status}}</label> </ion-item>
+           <h3><button ion-button (click)="takePhoto()" full color="danger">Take Photo</button></h3> 
+           <p><button ion-button (click)="getImage()" full color="primary">Get Photo</button></p>
+           <p><button ion-button (click)="uploadImage()" full color="danger">Up Photo</button></p>
+           
+         </ion-item>
+    </ion-list>
+         <ion-list>
+            <ion-item>
+                <ion-thumbnail item-left>
+                <ion-item *ngFor="let item of items"  >
+                    <img src="http://www.manocamera.com/userUpload/{{item.img2}}" /></ion-item>
+                 </ion-thumbnail>
+               <ion-item *ngFor="let item of items" ><label>สถานะ : {{item.status2}}</label> </ion-item>
+               <h3><button ion-button (click)="takePhoto()" full color="danger">Take Photo</button></h3> 
+               <p><button ion-button (click)="getImage()" full color="primary">Get Photo</button></p>
+               <p><button ion-button (click)="uploadImage2()" full color="danger">Up Photo</button></p>
+               
+             </ion-item>
+             </ion-list>
+      <ion-list>
+                <ion-item>
+                    <ion-thumbnail item-left>
+                    <ion-item *ngFor="let item of items"  >
+                        <img src="http://www.manocamera.com/userUpload/{{item.img3}}" /></ion-item>
+                     </ion-thumbnail>
+                   <ion-item *ngFor="let item of items" ><label>สถานะ : {{item.status3}}</label> </ion-item>
+                   <h3><button ion-button (click)="takePhoto()" full color="danger">Take Photo</button></h3> 
+                   <p><button ion-button (click)="getImage()" full color="primary">Get Photo</button></p>
+                   <p><button ion-button (click)="uploadImage3()" full color="danger">Up Photo</button></p>
+                   
+                 </ion-item>
+      </ion-list>
+
 </ion-content>

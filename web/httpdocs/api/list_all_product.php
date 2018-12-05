@@ -17,7 +17,7 @@ if (isset($_SERVER['HTTP_ORIGIN'])) {
         exit(0);
     }
 require '../index.php';
-$q = 'select * from items where type_id="1" and option_id="1" ';
+$q = 'select * from items where type_id="1" and option_id="1" and showItem="1" ';
 $result = mysqli_query($con,$q);
 mysqli_set_charset($con, "utf8");
 

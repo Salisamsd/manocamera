@@ -26,9 +26,9 @@
       </ion-item>
       <ion-label color='danger'><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;กรุณากรอกเลขบัตรประชาชน 13 หลัก เพื่อยืนยันการเช่า  </b></ion-label>
       <!--<p><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;กรุณากรอกประชาชน 13 หลัก เพื่อยืนยันการเช่า</b></p>-->
-      <ion-item  >
-        <!--<ion-label><b>บัตรประชน</b></ion-label>-->
-        <ion-input type="number" placeholder="กรุณาตรวจสอบให้ครบถ้วน" name="personID" #personID></ion-input>
+      <ion-item  style="display: none">
+        <ion-label><b>บัตรประชน</b></ion-label>
+        <ion-input type="number" placeholder="กรุณาตรวจสอบให้ครบถ้วน" name="personID" #personID [value]=username></ion-input>
       </ion-item>
       
           <ion-label color='danger'><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;วงเงินประกันสำหรับการเช่า</b></ion-label>
