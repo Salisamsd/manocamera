@@ -1,0 +1,7 @@
+{
+  "name": "ion-timeline",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

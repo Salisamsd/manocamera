@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
@@ -21,6 +22,14 @@ import { UpimagePage } from '../pages/upimage/upimage';
 import { RentformPage } from '../pages/rentform/rentform';
 import { RentPage } from '../pages/rent/rent';
 import { HistoryPage } from '../pages/history/history';
+import { MirrorlessPage } from '../pages/mirrorless/mirrorless';
+import { VideoPage } from '../pages/video/video';
+import { ActonPage } from '../pages/acton/acton';
+import { AccPage } from '../pages/acc/acc';
+import { ChangepassPage } from '../pages/changepass/changepass';
+import { DetailRentPage } from '../pages/detail-rent/detail-rent';
+import { DetailWcPage } from '../pages/detail-wc/detail-wc';
+
 import { AccordionComponent } from '../components/accordion/accordion';
 
 import { File } from '@ionic-native/file';
@@ -53,7 +62,13 @@ import { IonicStorageModule } from '@ionic/storage';
     RentformPage,
     RentPage,
     HistoryPage,
-    AccordionComponent
+    AccordionComponent,
+    MirrorlessPage,
+    VideoPage,ActonPage,
+    AccPage,ChangepassPage,
+    DetailRentPage,
+    DetailWcPage
+    
   ],
   imports: [
     BrowserModule,
@@ -79,12 +94,14 @@ import { IonicStorageModule } from '@ionic/storage';
     CheckoutPage,
     CheckdetailPage,
     UpimagePage,
-    RentformPage,RentPage,HistoryPage
-  ],
-  providers: [
-    StatusBar,
-    SplashScreen,Camera,FileTransfer,File,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
-  ]
+    RentformPage,RentPage,HistoryPage,
+    MirrorlessPage,VideoPage,ActonPage,AccPage,ChangepassPage
+  ,DetailRentPage,DetailWcPage
+],
+providers: [
+  StatusBar,
+  SplashScreen,Camera,FileTransfer,File,
+  {provide: ErrorHandler, useClass: IonicErrorHandler}
+]
 })
 export class AppModule {}

@@ -105,17 +105,7 @@ export class AddCartPage {
     // this.edate = this.navParams.get("edate");
 
     //this.optionRent = this.value;
-    if (this.personID.value == "") {
-      let alert = this.alertCtrl.create({
-        title: "โปรดกรอกวันที่รับเครื่อง",
-
-        //subTitle:"Country field is empty",
-
-        buttons: ["OK"]
-      });
-
-      alert.present();
-    } else if (this.optionRent == undefined) {
+    if (this.optionRent == undefined) {
       let alert = this.alertCtrl.create({
         title: "โปรดเลือกรูปแบบการเช่า",
 
@@ -187,7 +177,7 @@ export class AddCartPage {
               console.log(data);
             } else {
               let alert = this.alertCtrl.create({
-                title: "ไม่มีมีคิวว่าง",
+                title: "ทำรายการไม่สำเร็จ",
                 //subTitle:"กรุณากดโอเค",
                 buttons: ["OK"]
               });

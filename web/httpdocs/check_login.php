@@ -32,7 +32,7 @@
 			else
 			{
                                 echo "<script>";
-                                echo "alert(\"คุณไม่เป็นพนักงาน หรือ ผู้พักงาน\");"; 
+                                echo "alert(\"คุณไม่เป็นพนักงาน หรือ ถูกพักงาน\");"; 
                                 echo "window.history.back()";
                                 echo "</script>";
 				//header("location:index.html");

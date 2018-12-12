@@ -3,83 +3,36 @@ import { NavController , ModalController , NavParams } from 'ionic-angular';
 import {Http, Headers, RequestOptions}  from "@angular/http";
 import { LoadingController } from 'ionic-angular';
 import { HistoryPage } from '../history/history';
+
+
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
 })
 export class AboutPage {
-  
-
-  
-  
-  data:any;
-  username:any;
-  items:any;
-  telephone:any;
-  email:any;
-  
-  constructor(public navCtrl: NavController,public navParams: NavParams,private http: Http,  public loading: LoadingController) {
-    
-  
-this.username = this.navParams.get('username');
- this.username = navParams.data;
-}
- ionViewDidLoad() {
-  
-    console.log('ionViewDidLoad AboutPage');
-    console.log(this.navParams.data);
-  }
-    ngOnInit(){
-  
-  this.username = this.navParams.get('username');
-
-   
-
-var headers = new Headers();
-
-headers.append("Accept", 'application/json');
-
-headers.append('Content-Type', 'application/json' );
-
-let options = new RequestOptions({ headers: headers });
-
-let data = {
-
-    username: this.username
-
-    };
-
-let loader = this.loading.create({
-
-content: 'Processing please wait...',
-
-});
-
-loader.present().then(() => {
-
-this.http.post('http://manocamera.com/api/retrieve_data.php',data, options)
-
-.map(res => res.json())
-
-   .subscribe(res => {
-
-    loader.dismiss()
-
-   this.items=res.server_response;
-
-   console.log(this.items);
-
-   });
-
-    });
-
-     }
-    
-     editPost(item){
-    
-      this.navCtrl.push(HistoryPage,item)
-  
+  items1:any=[];
+  slides = [
+    {
+      title: "Welcome to the Docs!",
+      description: "The <b>Ionic Component Documentation</b> showcases a number of useful components that are included out of the box with Ionic.",
+      image: "assets/img/ica-slidebox-img-1.png",
+    },
+    {
+      title: "What is Ionic?",
+      description: "<b>Ionic Framework</b> is an open source SDK that enables developers to build high quality mobile apps with web technologies like HTML, CSS, and JavaScript.",
+      image: "assets/img/ica-slidebox-img-2.png",
+    },
+    {
+      title: "What is Ionic Cloud?",
+      description: "The <b>Ionic Cloud</b> is a cloud platform for managing and scaling Ionic apps with integrated services like push notifications, native builds, user auth, and live updating.",
+      image: "assets/img/ica-slidebox-img-3.png",
     }
+  ];
+
+  // constructor(public navCtrl: NavController,public navParams: NavParams,private http: Http,  public loading: LoadingController) {
+    
+  // }
+ 
 }
     
   

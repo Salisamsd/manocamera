@@ -30,7 +30,8 @@
     clear: both;
 }
 </style>
-<?php
+ <title>MANOCAMERA</title>
+<?php // ใครเป็ยคนloginเข้ามา
 	session_start();
 	$serverName = "localhost";
 	$userName = "manocame";
@@ -59,12 +60,12 @@
                     <p class="title">เฉพาะผู้ที่มีสิทธิ์ผ่านเท่านั้น</p>
                     <p><a class="btn btn-info " href="newEmp.php" role="button">เพิ่ม / แก้ไข พนักงาน</a></p></center>
         </div>
-            <div class= "column2 card1"  >
+<!--            <div class= "column2 card1"  >
              <center><img src="upload/<?php echo $objResult["image"];?>" width="340px" height="300px" >
         <h1><?php echo $objResult["Username"];?></h1>
         <p class="title"><?php echo $objResult["Name"];?></p>
         <p><a class="btn btn-info " href="updateAllEmp.php" role="button">แก้ไขข้อมูลส่วนตัว</a></p></center>
-        </div>
+        </div>-->
             
         </div>
 
@@ -73,24 +74,6 @@
     </div>
         
     
-             <!--<div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-6">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-sm-6 col-md-4">
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="card" >
-                        <img src="image/1111.jpg"height="200px" >
-                        <h1><?php echo $objResult["Username"];?></h1>
-                        <p class="title"><?php echo $objResult["Name"];?></p>
-                        <p><button>Contact</button></p>
-                        </div> 
-                    </div>
-
-                </div>
-            </div>
-  </div>-->
 </div>
   
 

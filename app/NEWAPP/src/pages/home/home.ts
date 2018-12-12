@@ -1,9 +1,10 @@
 import { Component, ViewChild } from "@angular/core";
 import { NavController, AlertController, NavParams } from "ionic-angular";
-import { ContactPage } from "../contact/contact";
-import { WelcomePage } from "../welcome/welcome";
+import { VideoPage } from '../video/video';
+import { ActonPage } from '../acton/acton';
+import { AccPage } from '../acc/acc';
 import { DslrPage } from "../dslr/dslr";
-
+import { MirrorlessPage } from '../mirrorless/mirrorless';
 import { Http, Headers, RequestOptions } from "@angular/http";
 import { LoadingController } from "ionic-angular";
 import "rxjs/add/operator/map";
@@ -32,12 +33,7 @@ export class HomePage {
     this.username = this.navParams.get("username");
     this.username = navParams.data;
 
-    this.http
-      .get("http://manocamera.com/api/list_dslr_BL.php")
-      .map(res => res.json())
-      .subscribe(data => {
-        this.items1 = data["data"];
-      });
+   
   }
 
   ionViewDidLoad() {
@@ -80,6 +76,7 @@ export class HomePage {
     });
   }
 
+  
   goDslr() {
     let data = {
       username1: this.username
@@ -89,7 +86,33 @@ export class HomePage {
 
     //this.navCtrl.push(DslrPage,this.username);
   }
-  logout() {
-    this.app.getRootNav().setRoot(WelcomePage);
+  goML() {
+    let data = {
+      username2: this.username
+    };
+
+    this.navCtrl.push(MirrorlessPage, data);
   }
+  goVI() {
+    let data = {
+      username3: this.username
+    };
+
+    this.navCtrl.push(VideoPage, data);
+  }
+  goAT() {
+    let data = {
+      username4: this.username
+    };
+
+    this.navCtrl.push(ActonPage, data);
+  }
+  goAC() {
+    let data = {
+      username5: this.username
+    };
+
+    this.navCtrl.push(AccPage, data);
+  }
+  
 }

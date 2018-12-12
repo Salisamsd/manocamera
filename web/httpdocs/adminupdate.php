@@ -1,7 +1,7 @@
-
+ <title>MANOCAMERA</title>
 <?php
-require 'index.php';
-session_start();
+
+        session_start();
 	$serverName = "localhost";
 	$userName = "manocame";
 	$userPassword = "Pern1234";
@@ -18,7 +18,7 @@ $rowus = mysqli_fetch_array($objQuery,MYSQLI_ASSOC);
 
 ?>
 
-
+ <title>MANOCAMERA</title>
 <?php include 'lockpage.php';?>
 <div id="wrapper">
     <?php include('menu.php');?>

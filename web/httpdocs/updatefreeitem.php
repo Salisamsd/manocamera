@@ -1,12 +1,12 @@
 <?php
     require 'index.php';
-    $ft_id =$_POST['ft_id'];
-	$ft_model=$_POST['ft_model'];
-    $item_id =$_POST['item_id'];
+    $id =$_POST['id'];
+	
+    $item_name =$_POST['item_name'];
     $ft_name =$_POST['ft_name'];
-    $status_id =$_POST['status_id'];
+   
     
-    $q="UPDATE freeitems SET ft_id='$ft_id',ft_model='$ft_model',item_id='$item_id',ft_name='$ft_name',status_id='$status_id' WHERE ft_id='$ft_id'"; 
+    $q="UPDATE freeshow SET item_name='$item_name',ft_name='$ft_name' WHERE id='$id'"; 
     $result = mysqli_query($con, $q);
    if($result){
    echo "แก้ไขข้อมูลเรียบร้อย";

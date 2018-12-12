@@ -6,6 +6,7 @@ import { ProfilePage } from '../profile/profile';
 import { HistoryPage } from '../history/history';
 import { UpimagePage } from '../upimage/upimage';
 import { WelcomePage } from '../welcome/welcome';
+import { ChangepassPage } from '../changepass/changepass';
 import {App} from 'ionic-angular';
 @Component({
   selector: 'page-contact',
@@ -76,6 +77,11 @@ export class ContactPage {
       });
   
        }
+       change(item){
+
+        this.navCtrl.push(ChangepassPage,item)
+        
+          }
   
        editPost(item){
 

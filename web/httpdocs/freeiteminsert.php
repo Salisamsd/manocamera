@@ -20,24 +20,10 @@ require 'index.php';
                
           
                  
-                <label>Model:</label><input name="ft_model" type="text" id="ft_model" size="20" >
-                <label>เป็นของ:</label><input name="item_id" type="text" id="item_id" size="49"  >
+                
+                <label>เป็นของ:</label><input name="item_name" type="text" id="item_name" size="49"  >
                 <label>ข้อมูล:</label><textarea  name="ft_name"  id="ft_name" cols="50" rows="7" wrap="soft"></textarea>
-                <br>           
-               
-                
-                
-                
-                 <label>สถานะ</label>
-                    
-                <input type="radio" name="status_id" value="1" id="status_id"  >
-                        พร้อมใช้งาน
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="status_id" value="2" id="status_id"  >
-                        ชำรุด
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="status_id" value="3" id="status_id"  >
-                        กำลังซ่อมแซม
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="status_id" value="4" id="status_id"  >
-                        หาย
+
                         <br>
                        <input name="submit" type="submit" value="ยืนยัน">
             </fieldset>

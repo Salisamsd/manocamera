@@ -105,8 +105,9 @@ export class DetailPage {
       let options = new RequestOptions({ headers: headers });
       let dropdt = +new Date(this.edate.value);
       let pickdt = +new Date(this.sdate.value);
-
+      var ts = new Date();
       let data = {
+        
         daysDiff: Math.round((dropdt - pickdt) / 86400000),
         item_id: this.item_id,
         item_name: this.item_name,
@@ -131,18 +132,19 @@ export class DetailPage {
           .post("http://manocamera.com/api/Newcq.php", data, options)
           .map(res => res.json())
           .subscribe(res => {
-            console.log(res);
+            
             loader.dismiss();
             if (res == "คิวว่าง") {
               let alert = this.alertCtrl.create({
-                title: "มีคิวว่าง",
+                title: "คิวว่าง",
                 subTitle: res,
                 buttons: ["OK"]
               });
 
               alert.present();
               this.navCtrl.push(AddCartPage, data);
-            } else {
+            } 
+            else {
               let alert = this.alertCtrl.create({
                 title: "ไม่มีมีคิวว่าง",
                 subTitle: "กรุณากดโอเค",

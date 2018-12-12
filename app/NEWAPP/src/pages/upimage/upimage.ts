@@ -1,9 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { IonicPage, NavController, NavParams , AlertController, DateTime} from 'ionic-angular';
-
 import {Http, Headers, RequestOptions}  from "@angular/http";
-
 import { LoadingController } from 'ionic-angular';
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
@@ -23,21 +20,22 @@ import { dateDataSortValue } from 'ionic-angular/umd/util/datetime-util';
   templateUrl: 'upimage.html',
 })
 export class UpimagePage {
-  
-  
+  information: any[];
+  items1:any=[];
   items:any=[];
   data:any;
   telephone:any;
   username:any;
   nationID:any;
-  ui_id:any;
+  imageSrc:any;
    myphoto:any;
   @ViewChild("newtelephone")newtelephone;
   @ViewChild("newemail")newemail;
 
-  constructor(  public loading: LoadingController,public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams,  private http: Http,private camera: Camera, private transfer: FileTransfer, private file: File, private loadingCtrl:LoadingController) {
-  this.username = this.navParams.get('username') ;
-  
+  constructor(public loading: LoadingController,public navCtrl: NavController, public alertCtrl: AlertController, public navParams: NavParams,  private http: Http,private camera: Camera, private transfer: FileTransfer, private file: File, private loadingCtrl:LoadingController) {
+   
+    this.username = this.navParams.get('username') ;
+    
   var headers = new Headers();
   
     headers.append("Accept", 'application/json');
@@ -75,7 +73,16 @@ export class UpimagePage {
      });
  
      });
-  }
+  
+     this.http
+     .get("assets/information.json")
+     .map(res => res.json())
+     .subscribe(data => {
+       this.items1 = data["data"];
+     });
+
+  
+}
   ionViewDidLoad() {
     console.log('ionViewDidLoad UpimagePage');
     console.log(this.navParams.data);
@@ -83,7 +90,7 @@ export class UpimagePage {
 
   takePhoto(){
     const options: CameraOptions = {
-      quality: 70,
+      quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE
@@ -100,7 +107,7 @@ export class UpimagePage {
 
   getImage() {
     const options: CameraOptions = {
-      quality: 70,
+      quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
       saveToPhotoAlbum:false
@@ -117,7 +124,7 @@ export class UpimagePage {
 
   cropImage() {
     const options: CameraOptions = {
-      quality: 70,
+      quality: 100,
       destinationType: this.camera.DestinationType.DATA_URL,
       sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
       saveToPhotoAlbum: false,
@@ -312,4 +319,5 @@ doRefresh(refresher) {
             refresher.complete();
           }, 2000);
         }
+        
       }

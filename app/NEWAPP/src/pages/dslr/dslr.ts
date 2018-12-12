@@ -55,28 +55,28 @@ export class DslrPage {
     this.isAndroid = platform.is("android");
 
     this.http
-      .get("http://manocamera.com/api/list_all_product.php")
+      .get("http://manocamera.com/api/dslr/list_all_product.php")
       .map(res => res.json())
       .subscribe(data => {
         this.items = data["data"];
       });
 
     this.http
-      .get("http://manocamera.com/api/list_dslr_BL.php")
+      .get("http://manocamera.com/api/dslr/list_dslr_BL.php")
       .map(res => res.json())
       .subscribe(data => {
         this.items1 = data["data"];
       });
 
     this.http
-      .get("http://manocamera.com/api/list_dslr_L.php")
+      .get("http://manocamera.com/api/dslr/list_dslr_L.php")
       .map(res => res.json())
       .subscribe(data => {
         this.items2 = data["data"];
       });
 
     this.http
-      .get("http://manocamera.com/api/list_dslr_A.php")
+      .get("http://manocamera.com/api/dslr/list_dslr_A.php")
       .map(res => res.json())
       .subscribe(data => {
         this.items3 = data["data"];
