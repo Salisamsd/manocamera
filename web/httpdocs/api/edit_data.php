@@ -22,11 +22,11 @@ if (isset($data)) {
     $username = $request->username;
     $newtelephone = $request->newtelephone;
     $newemail = $request->newemail;
-		$newname= $request->newname;
-        $newlastname = $request->newlastname;
-        $newbdate = $request->newbdate;
-        $newnationID= $request->newnationID;
-        $newaddress= $request->newaddress;
+    $newname = $request->newname;
+    $newlastname = $request->newlastname;
+    $newbdate = $request->newbdate;
+    $newnationID = $request->newnationID;
+    $newaddress = $request->newaddress;
 }
 
 $sql = "UPDATE users SET name='$newname', lastname='$newlastname',bdate='$newbdate',nationID='$newnationID',address='$newaddress', telephone = '$newtelephone', email ='$newemail'  WHERE username = '$username' ";

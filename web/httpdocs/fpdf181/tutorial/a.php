@@ -1,2 +1,9 @@
-<p class='demo'><a href='tuto1.php' target='_blank' class='demo'>[Demo]</a></p>
+<html>
+<head>
+<title>ThaiCreate.Com PHP PDF</title>
+</head>
+<body>
 
+PDF Created Click <a href="../myPdf/testPdf.php">here</a> to Download
+</body>
+</html>

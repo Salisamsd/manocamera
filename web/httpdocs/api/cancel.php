@@ -23,37 +23,33 @@ require "../index.php";
 $data = file_get_contents("php://input");
 if (isset($data)) {
     $request = json_decode($data);
-    $id = $request->id;
+    $rentID = $request->rentID;
     $status = "2".$str;
     $date = $request->date;
-    
+   
 }
 $date = stripslashes($date);
 $id = stripslashes($id);
-$check ="SELECT * FROM rentlist  WHERE  id='$id' and NOT('$date' =  sdate OR '$date' <= edate)";
+$check ="SELECT * FROM rentlist  WHERE  rentID='$rentID' and status_r='2'   "; //
  $result = mysqli_query($con,$check);
  $num = mysqli_num_rows($result);
 if($num >0 ){
 	$response = "ไม่สามารถยกเลิกได้";
 } 
 else{
-$sql = "UPDATE rentlist SET status='$status' WHERE  id='$id' ";
-$result = mysqli_query($con, $sql);
-$row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-$active = $row['active'];
+$sql2 = "UPDATE rentlist SET status='$status' WHERE  rentID='$rentID' ";
 
-$count = mysqli_num_rows($result);
-
-// If result matched $myusername and $mypassword, table row must be 1 row
-
-if ($count < 1) {
-    $response = "คิวว่าง";
-} else {
-    $response = "ไม่มีคิวว่าง";
+if ($con->query($sql2) === TRUE) {
+	$response= "Registration successfull";
+   
+}else {
+   $response="Error: " . $sql . "<br>" . $db->error;
 }
 }
-
-
-
-echo json_encode($response);
+  
+	echo json_encode( $response);
+ 
 ?>
+
+
+

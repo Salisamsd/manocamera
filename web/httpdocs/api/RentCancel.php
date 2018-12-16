@@ -49,7 +49,7 @@ require "../index.php";
                }
 
  
- $sql ="SELECT * FROM rentlist  LEFT JOIN items ON rentlist.item_name=items.item_name LEFT JOIN rentFormat ON rentlist.rentFormat= rentFormat.id LEFT JOIN statusR ON rentlist.status= statusR.id LEFT JOIN freeshow ON rentlist.item_name= freeshow.item_name WHERE username='$username' and status='1'  GROUP BY rentlist.id DESC ;";
+ $sql ="SELECT * FROM rentlist  LEFT JOIN items ON rentlist.item_name=items.item_name LEFT JOIN rentFormat ON rentlist.rentFormat= rentFormat.id LEFT JOIN statusR ON rentlist.status= statusR.id LEFT JOIN freeshow ON rentlist.item_name= freeshow.item_name WHERE username='$username' and status='2'  GROUP BY rentlist.id DESC ;";
 
 
  $result = mysqli_query($con, $sql);

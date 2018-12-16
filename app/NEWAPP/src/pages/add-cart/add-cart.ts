@@ -16,6 +16,7 @@ import { dateValueRange } from "ionic-angular/umd/util/datetime-util";
 import { RentPage } from "../rent/rent";
 import { RentformPage } from "../rentform/rentform";
 import { TabsPage } from "../tabs/tabs";
+import { HistoryPage } from '../history/history';
 /**
  * Generated class for the AddCartPage page.
  *
@@ -158,13 +159,13 @@ export class AddCartPage {
         content: "Processing please wait..."
       });
 
-      loader.present().then(() => {
+      loader.dismiss().then(() => {
         this.http
           .post("http://manocamera.com/api/rent.php", data, options)
           .map(res => res.json())
           .subscribe(res => {
-            console.log(res);
-            loader.dismiss();
+           
+            //loader.dismiss(); ใช้ Line api
             if (res == "คิวว่าง") {
               let alert = this.alertCtrl.create({
                 title: "ทำรายการเช่าสำเร็จ",
@@ -172,17 +173,19 @@ export class AddCartPage {
                 buttons: ["OK"]
               });
 
-              alert.present();
-              this.navCtrl.push(TabsPage, data);
-              console.log(data);
+              // alert.present();
+              // this.navCtrl.push(TabsPage, data);
+              // console.log(data);
             } else {
               let alert = this.alertCtrl.create({
-                title: "ทำรายการไม่สำเร็จ",
+                title: "ทำรายการเช่าสำเร็จ",
                 //subTitle:"กรุณากดโอเค",
                 buttons: ["OK"]
               });
 
               alert.present();
+              this.navCtrl.setRoot(HistoryPage,data);
+              console.log(data);
             }
           });
       });

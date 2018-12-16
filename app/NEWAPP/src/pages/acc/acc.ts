@@ -51,7 +51,7 @@ export class AccPage {
   ) {
     // this.username = this.navParams.get('username1');
     // this.username = navParams.data;
-    this.username = navParams.data.username1;
+    this.username = navParams.data.username5;
     console.log("this.username", this.username);
 
     this.isAndroid = platform.is("android");

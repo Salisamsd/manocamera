@@ -12,25 +12,33 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-
+       
+          <!--<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false">DSLR</a>
+            <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+             <a class="dropdown-item" href="DSLR/listDSLR_Body.php">Body</a>
+             <a class="dropdown-item" href="DSLR/listDSLR_BL.php">Body+Lense</a>
+             <a class="dropdown-item" href="DSLR/listDSLR_L.php">Lense</a>
+             <a class="dropdown-item" href="DSLR/listDSLR_A.php">Accessory</a>
+            </div>
+            </li>-->
           <li class="nav-item">
-              <a class="nav-link" href="../rent/showrent.php">รายการเช่า</a>
-          </li>
-  
-          <li class="nav-item">
-              <a class="nav-link" href="../DSLR/listDSLR_Body.php">DSLR</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="../Mirrorless/listML_Body.php">MirrorLess</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../Video/listvdo_B.php">Video</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../Action/listaction_B.php">Action</a>
+              <a class="nav-link" href="rent/showrent.php">รายการเช่า</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../Accessary/listacc_A.php">All Accessory</a>
+              <a class="nav-link" href="DSLR/listDSLR_Body.php">DSLR</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="Mirrorless/listML_Body.php">MirrorLess</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Video/listvdo_B.php">Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Action/listaction_B.php">Action</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Accessary/listacc_A.php">All Accessory</a>
           </li>
           
         </ul>

@@ -141,7 +141,7 @@ export class HistoryPage  {
     
     });
     
-    loader.dismiss().then(() => {
+    loader.dismiss().then(() => { //8YQJAfAOR4Ts0gqyTLeQxa9Pwobxa7O5ooP1hCD5ite
     
     this.http.post('http://manocamera.com/api/Rentstatus.php',data, options)
     

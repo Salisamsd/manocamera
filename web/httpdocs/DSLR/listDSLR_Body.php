@@ -1,4 +1,3 @@
- <title>MANOCAMERA</title>
 <?php include '../lockpage.php';?>
 <div id="wrapper">
     <?php include('../menu.php');?>
@@ -10,7 +9,7 @@
             <a class="btn btn-info " href="listDSLR_A.php" role="button">Accessory</a>
             <a class="btn btn-primary" style='float:right;' href="insertBody.php" role="button" >เพิ่ม </a>
             
-       <?php include('dslr_body.php');?>
+        <?php include('dslr_body.php');?>
         
     </div>
     </div>

@@ -49,7 +49,7 @@ require "../index.php";
                }
 
  
- $sql ="SELECT * FROM rentlist  LEFT JOIN items ON rentlist.item_name=items.item_name LEFT JOIN rentFormat ON rentlist.rentFormat= rentFormat.id LEFT JOIN statusR ON rentlist.status= statusR.id LEFT JOIN freeshow ON rentlist.item_name= freeshow.item_name WHERE username='$username' and status='0'  GROUP BY rentlist.id DESC ;";
+ $sql ="SELECT * FROM rentlist  LEFT JOIN items ON rentlist.item_name=items.item_name LEFT JOIN rentFormat ON rentlist.rentFormat= rentFormat.id LEFT JOIN statusR ON rentlist.status= statusR.id LEFT JOIN freeshow ON rentlist.item_name= freeshow.item_name WHERE username='$username' and status='0'or status='3' GROUP BY rentlist.id DESC ;";
 
 
  $result = mysqli_query($con, $sql);
@@ -65,9 +65,10 @@ while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
 				'sdate'=> $row['sdate'],
 				'edate'=> $row['edate'],
 				'name'=> $row['name'],
-				'dayRent'=> $row['dayRent'],
+				'status_r'=> $row['status_r'],
 				'statusR_name'=> $row['statusR_name'],
-				'ft_name' =>  str_replace("\n", "<br>\n",($row['ft_name'])),
+		'dayRent'=> $row['dayRent'],
+				'ft_name' => $row['ft_name'],
 		
     ]/* + $row*/;
 }
