@@ -51,14 +51,15 @@ $rowitem = mysqli_fetch_array($resitem, MYSQLI_ASSOC);
                 <tr><td>ผู้เช่า </td><td> <?php echo $rowitem['username']; ?> 
                     </td> 
                 </tr> 
-                <tr><td>สัญญาเช่า </td><td> <a class="btn btn-warning" href='../fpdf181/myPdf/testPdf.php?id=<?php echo ($rowitem['id']); ?>' target='_blank' class='demo'>คลิ๊กเพื่อพิมพ์ </a>
+                <tr><td>สัญญาเช่า </td><td> <a class="btn btn-warning" href='Charter.php?rentID=<?php echo ($rowitem['rentID']); ?>' target='_blank' class='demo'>คลิ๊กเพื่อพิมพ์ </a>
                     </td> 
                 </tr> 
             </table>
 
             
+
             <center><a class="btn btn-primary"  href="conf2.php?id=<?php echo ($rowitem['id']); ?>" role="button">รับเครื่องแล้ว</a>
-                <a class="btn btn-danger"  href="conf3.php?username=<?php echo ($rowitem['username']); ?>" role="button">ยกเลิกการเช่า</a></center>
+                <a class="btn btn-danger"  href="conf3.php?id=<?php echo ($rowitem['id']); ?>" role="button">ยกเลิกการเช่า</a></center>
 
 
         </div>
@@ -69,5 +70,4 @@ $rowitem = mysqli_fetch_array($resitem, MYSQLI_ASSOC);
 
     </div>
 
-</div>
 </div>

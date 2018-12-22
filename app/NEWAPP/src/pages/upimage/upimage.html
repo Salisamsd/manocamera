@@ -15,9 +15,13 @@
           refreshingText="Refreshing...">
         </ion-refresher-content>
       </ion-refresher>
-
+  <b style="color: red; font-weight: bold; font-size: 15px;">
+      &nbsp;&nbsp; &nbsp; &nbsp;----ไม่ยืนยันเอกสารภายใน 24 ชม. หลังจากเช่าแบบที่ 1---- </b>
+      <b style="color: red; font-weight: bold; font-size: 15px;"> 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--- จะยกเลิกการเช่าทันที เพื่อรักษาสิทธิ์แก่ลูกค้าท่านอื่น --- </b>
     <ion-list>
         <ion-item >
+          
             <ion-thumbnail item-left>
 
               <ion-item *ngFor="let item of items"  >
@@ -27,9 +31,6 @@
           <ion-item *ngFor="let item of items"  > 
                 <label >1.สำเนาบัตรประชาชน</label><br>
                 <label id="fld_8768091Label" >สถานะ : {{item.status}}</label> </ion-item>
-                    <!-- <button ion-button (click)="takePhoto()" color="danger" icon-only large>
-                      <ion-icon name="camera"></ion-icon>
-                    </button> -->
                     <button ion-button (click)="getImage()" color="secondary" icon-only small>
                         <ion-icon name="camera"></ion-icon>
                       </button>

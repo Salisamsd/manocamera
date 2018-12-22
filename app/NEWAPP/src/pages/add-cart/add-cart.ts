@@ -131,11 +131,11 @@ export class AddCartPage {
       headers.append("Accept", "application/json");
       headers.append("Content-Type", "application/json");
       let options = new RequestOptions({ headers: headers });
-      //let dropdt = +new Date(this.edate.value);
-      //let pickdt = +new Date(this.sdate.value);
+      let dropdt = +new Date(this.edate.value);
+      let pickdt = +new Date(this.sdate.value);
 
       let data = {
-        //daysDiff : Math.round((dropdt-pickdt)/86400000),
+        daysDiff : Math.round((dropdt-pickdt)/86400000),
         //item_id: this.item_id,
         item_name: this.item_name,
         sdate: this.sdate,
@@ -144,15 +144,7 @@ export class AddCartPage {
         //personID: this.personID.value,
         optionRent: this.optionRent,
         username:this.username,
-        //optionRent_id:this.optionRent_id
-        //img1: this.img1,
-        // item_priceperday : this.item_priceperday,
-        //deposit_1 : this.deposit_1,
-        //deposit_2 : this.deposit_2,
-        //total: this.item_priceperday*Math.round(dropdt-pickdt)/86400000
-
-        // "diffrentDay" : daysDiff
-        //total : (this.edate.value - this.sdate.value)
+       
       };
 
       let loader = this.loading.create({
@@ -184,7 +176,7 @@ export class AddCartPage {
               });
 
               alert.present();
-              this.navCtrl.setRoot(HistoryPage,data);
+              this.navCtrl.setRoot(TabsPage,data);
               console.log(data);
             }
           });
@@ -195,49 +187,3 @@ export class AddCartPage {
     this.modalCtrl.create(RentformPage).present();
   }
 }
-//this.storage.get("cart").then((data) =>{
-// console.log(data);
-// if(data == null || data.lenght == 0){
-//  data = [];
-///  data.push({"item" : item,
-// "qty" : 1,
-//   "amount":(item.item_priceperday),
-
-//  });
-// }else{
-//  let added = 0;
-//for(let i = 0 ; i < data.lenght ; i++ ){
-//  if(item.item_id = data[i].item.item_id){
-//  console.log("เพิ่มลงตระกร้าแล้ว");
-//  let qty = data[i].qty;
-//  data[i].qty = qty+1;
-// data[i].amount = parseFloat(data[i].amount) + parseFloat(data[i].item.item_priceperday);
-//  added = 1;
-
-//
-//  }
-// }
-//if(added==0){data.push({
-//  "item" : item,
-//  "qty" : 1,
-// "amount":parseFloat(item.item_priceperday),
-// "diffrentDay" : daysDiff
-// });
-//   }
-// }
-
-// this.storage.set("cart",data).then( ()=>{
-//
-//   console.log("Cart Update");
-//  console.log(data);
-
-//  let toast = this.toastCtrl.create({
-//   message: 'Cart Updated',
-//    duration: 3000,
-//   position: 'top'
-//  }); toast.present();
-
-// })
-
-// });
-//   }

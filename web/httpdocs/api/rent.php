@@ -28,6 +28,7 @@ if (isset($data)) {
     $sdate = $request->sdate;
     $edate = $request->edate;
     $total = $request->total;
+    $daysDiff = $request->daysDiff;
     $personID = $request->personID;
     $number = mt_rand(0, 1000000);
     $number1 = mt_rand(0, 10000000);
@@ -36,8 +37,8 @@ if (isset($data)) {
     $rentID = date('Y') . $number . $number1 . $text;
     $optionRent = $request->optionRent;
 }
-$sql = "INSERT INTO rentlist ( rentID,item_name,total,username, sdate,edate,rentFormat,status_r)
-VALUES ('$rentID','$item_name','$total','$username', '$sdate','$edate','$optionRent','$optionRent')";
+$sql = "INSERT INTO rentlist ( rentID,item_name,total,username, sdate,edate,rentFormat,status_r,status)
+VALUES ('$rentID','$item_name','$total','$username', '$sdate','$edate','$optionRent','$optionRent','$optionRent')";
 
 
 if ($con->query($sql) === TRUE) {

@@ -19,7 +19,7 @@ export class ChangepassPage {
   @ViewChild("oldPass") oldPass;
   @ViewChild("newPass") newPass;
   @ViewChild("conPass") conPass;
-   items:any;
+  items:any;
   password:any;
   username:any;
  

@@ -15,6 +15,10 @@
 
           <li class="nav-item">
               <a class="nav-link" href="../rent/showrent.php">รายการเช่า</a>
+          </li
+          
+          <li class="nav-item">
+              <a class="nav-link" href="../user/listuser.php">ข้อมูลเกี่ยวกับผู้เช่า</a>
           </li>
   
           <li class="nav-item">

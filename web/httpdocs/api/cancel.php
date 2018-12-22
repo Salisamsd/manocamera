@@ -24,7 +24,7 @@ $data = file_get_contents("php://input");
 if (isset($data)) {
     $request = json_decode($data);
     $rentID = $request->rentID;
-    $status = "2".$str;
+    $status = "5".$str;
     $date = $request->date;
    
 }

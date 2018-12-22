@@ -1,6 +1,6 @@
 <?php 
     require '../index.php';
-    $q = 'select * from rentlist WHERE status="1"';
+    $q = 'select * from rentlist WHERE status="4"';
     $result = mysqli_query($con,$q);
     mysqli_set_charset($con, "utf8");
     ?>

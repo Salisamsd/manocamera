@@ -2,7 +2,7 @@
    require '../index.php';
     
     $id = $_GET['id'];
-    $status= "1" . $str;
+    $status= "4" . $str;
     $sql = "UPDATE rentlist SET status='$status' WHERE id='$id'"; 
     
     $result = mysqli_query($con, $sql);
